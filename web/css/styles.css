@@ -8,7 +8,7 @@ body {
 }
 
 header {
-   background-color: rgb(4, 4, 87);
+   background-color: rgb(2, 4, 117);
    margin: 0;
    padding: 10px;
 }
@@ -58,7 +58,7 @@ main {
 }
 
 footer {
-   background-color: rgb(3, 3, 70);
+   background-color:rgb(2, 4, 117);
    color: darkgoldenrod;
    padding: 3px;
 }
