@@ -28,7 +28,7 @@
       </div>
    </main>
    <footer>
-      <p>&copy; Jaden Wilson 2020 (CSE 341)</p><?php echo "Server Time" . date("g:i A")?>
+      <p>&copy; Jaden Wilson 2020 (CSE 341)</p><?php echo "Server Time: " . date("g:i A")?>
    </footer>
 </body>
 </html>
