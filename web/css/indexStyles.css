@@ -1,0 +1,80 @@
+main {
+   display: grid;
+   grid-template-columns: auto auto auto;
+   gap: 15px;
+   margin: 0 10%;
+   font-size: calc(10px + 1vw);
+}
+
+#right {
+   grid-column: 2-3;
+   margin: 0 40px;
+}
+
+#moviePosters {
+   grid-column: 1;
+   padding: 15px;
+   width: 500px;
+   height: auto;
+   display: block;
+   margin: auto;
+}
+
+#superheros {
+   display: block;
+   margin: auto;
+   width: 570px;
+   height: auto;
+   padding-bottom: 10px;
+}
+
+
+@media screen and (max-width: 1460px) {
+   main {
+      margin: 0;
+   }
+}
+
+@media screen and (max-width: 1160px) {
+   #moviePosters {
+      width: 250px;
+   }
+
+   #superheros {
+      width: 400px;
+   }
+}
+
+@media screen and (max-width: 750px) {
+   main {
+      grid-template-columns: auto;
+   }
+
+   #right {
+      grid-column: 1;
+   }
+
+   h2 {
+      text-align: center;
+   }
+}
+
+@media screen and (max-width: 450px) {
+   #superheros {
+      width: 300px;
+   }
+
+   #moviePosters {
+      padding: 10px 0 0 0;
+   }
+}
+
+@media screen and (max-width: 350px) {
+   #superheros {
+      width: 200px;
+   }
+
+   #moviePosters {
+      width: 200px;
+   }
+}

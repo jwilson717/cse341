@@ -1,0 +1,15 @@
+h2 {
+   text-align: center;
+}
+
+main {
+   display: block;
+   margin: 0;
+}
+
+
+@media screen and (max-width: 350px) {
+   #pagename {
+      font-size: 1.5em;;
+   }
+}

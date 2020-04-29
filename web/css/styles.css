@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Rationale&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
+body {
+   font-size: 100%;
+   margin: 0;
+   background-color: black;
+   font-family: 'Rationale', sans-serif;
+}
+
+header {
+   background-color: rgb(3, 3, 70);
+   margin: 0;
+   padding: 10px;
+}
+
+hr {
+   margin: 0;
+}
+
+#pagename {
+   color: darkgoldenrod;
+   text-align: center;
+   font-family: 'Aldrich', sans-serif;
+   font-size: 3em;
+}
+
+nav {
+   background-color: rgb(3, 15, 53);
+   font-size: 18px;
+}
+
+nav ul {
+   margin: 0;
+   padding-left: 0;
+   list-style: none;
+   display: flex;
+   justify-content: center;
+}
+
+nav li {
+   padding: 10px 0;
+}
+
+nav a {
+   color: darkgoldenrod;
+   text-decoration: none;
+   padding: 10px;
+}
+
+nav a:hover {
+   color:  rgb(3, 15, 53);
+   background-color: darkgoldenrod;
+}
+
+main {
+   background-color: rgb(70, 69, 69);
+   padding: 5px;
+}
+
+footer {
+   background-color: rgb(3, 3, 70);
+   color: darkgoldenrod;
+   padding: 3px;
+}
