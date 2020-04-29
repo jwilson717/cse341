@@ -28,7 +28,7 @@
       </div>
    </main>
    <footer>
-      <p>&copy; Jaden Wilson 2020 (CSE 341)</p><?php echo date_default_timezone_get()?>
+      <p>&copy; Jaden Wilson 2020 (CSE 341)</p><?php echo date("g:i A")?>
    </footer>
 </body>
 </html>
