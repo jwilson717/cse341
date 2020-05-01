@@ -1,7 +1,6 @@
 $(document).ready(function(){
    $('#colorchange').click(function() {
-      console.log($('header').css('backgroundColor'));
-      if ($('header').css('background-color') == darkred) {
+      if ($('header').css('background-color') == 'rgb(139, 0, 0)') {
          $('header').css('background-color', 'rgb(2, 4, 117)');
          $('footer').css('background-color', 'rgb(3, 15, 53)');
          $('nav').css('background-color', 'rgb(2, 4, 117)');
