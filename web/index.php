@@ -29,6 +29,9 @@
    </main>
    <footer>
       <p>&copy; Jaden Wilson 2020 (CSE 341)</p><?php echo "Server Time: " . date("l F j, g:i A")?>
+      <button type="button" id="colorchange">Change Color</button>
    </footer>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+   <script src="functions.js"></script>
 </body>
 </html>
