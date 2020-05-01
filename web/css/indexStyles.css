@@ -28,6 +28,10 @@ main {
    padding-bottom: 10px;
 }
 
+#colorchange {
+   float: right;
+}
+
 
 @media screen and (max-width: 1460px) {
    main {

@@ -1,9 +1,9 @@
 $(document).ready(function(){
    $('#colorchange').click(function() {
-      if ($('header').css('background-color') != 'red') {
-         $('header').css('background-color', 'red');
-         $('footer').css('background-color', 'red');
-         $('nav').css('background-color', 'red');
+      if ($('header').css('background-color') != 'darkred') {
+         $('header').css('background-color', 'darkred');
+         $('footer').css('background-color', 'darkred');
+         $('nav').css('background-color', 'darkred');
       } else {
          $('header').css('background-color', 'rgb(2, 4, 117)');
          $('footer').css('background-color', 'rgb(3, 15, 53)');
