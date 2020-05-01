@@ -1,5 +1,6 @@
 $(document).ready(function(){
    $('#colorchange').click(function() {
+      console.log($('header'));
       if ($('header').css('background-color') != 'darkred') {
          $('header').css('background-color', 'darkred');
          $('footer').css('background-color', 'darkred');
