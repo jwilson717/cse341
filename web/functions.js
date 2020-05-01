@@ -7,7 +7,7 @@ $(document).ready(function(){
       } else {
          $('header').css('background-color', 'darkred');
          $('footer').css('background-color', 'darkred');
-         $('nav').css('background-color', 'darkred');
+         $('nav').css('background-color', 'maroon');
       }
    });
 });
