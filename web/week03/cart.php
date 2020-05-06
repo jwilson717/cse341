@@ -23,7 +23,9 @@
    </nav>
    <main>
       <h2>Cart</h2>
-      <?php foreach ($_SESSION['cart'] as $i) {
+      <?php 
+         echo array_search('Digital', $_SESSION['cart'],true);
+         foreach ($_SESSION['cart'] as $i) {
          echo $i . '<br>';  
       }?>
    </main>
