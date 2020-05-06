@@ -1,5 +1,14 @@
+header {
+   margin: 0;
+   background-color: gray;
+}
+
 #siteTitle {
    text-align: center;
+}
+
+nav {
+   background-color: gray;
 }
 
 nav ul {
@@ -17,4 +26,8 @@ nav li {
 nav a {
    text-decoration: none;
    padding: 10px;
+}
+
+footer {
+   background-color: gray;
 }
