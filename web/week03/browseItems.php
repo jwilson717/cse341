@@ -31,7 +31,7 @@
    <main>
       <div id='itemscontainer'>
          <?php
-            $watches = array('Analog Calendar'=>'analogCalendar.png', 'Digital'=>'digital.jpg', 'Modern Horizontal'=>'modernhorizontal.png', 'Roman Numeral'=>'romanNumeral', 'Tactical'=>'tactical.jpg', 'Wooden'=>'wood.jpg');
+            $watches = array('Analog Calendar'=>'analogCalendar.png', 'Digital'=>'digital.jpg', 'Modern Horizontal'=>'modernhorizontal.png', 'Roman Numeral'=>'romanNumeral.jpg', 'Tactical'=>'tactical.jpg', 'Wooden'=>'wood.jpg');
             foreach ($watches as $t=>$f) {
                $item = "<div class='item'> <img src='images/$f' alt='$t Watch' width='200' height='200' class='itemimg'>";
                $item .= "<button type='button' class='addCart' value='$t'> Add to Cart</button> </div>";
