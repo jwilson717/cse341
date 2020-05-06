@@ -12,6 +12,10 @@ main {
    margin: 15px;
 }
 
+h2 {
+   text-align: center;
+}
+
 .itemimg, .addCart {
    display: block;
    margin: auto;
