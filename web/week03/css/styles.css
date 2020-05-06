@@ -1,6 +1,7 @@
 header {
    margin: 0;
    background-color: gray;
+   padding: 1px;
 }
 
 #siteTitle {
@@ -30,4 +31,5 @@ nav a {
 
 footer {
    background-color: gray;
+   padding: 1px;
 }
