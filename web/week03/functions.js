@@ -1,4 +1,10 @@
-function addToCart() {
-   let cart = '<%= SESSION["cart"] %>';
-   console.log(cart);
-}
+$(document).ready(function () {
+   $('.addCart').click(function() {
+      let val = $(this).val();
+      let url = 'browseItems.php';
+      let data = {'item': val};
+      $.post(url, data, function () {
+         return;
+      });
+   });
+});

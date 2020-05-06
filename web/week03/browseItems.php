@@ -1,6 +1,13 @@
 <?php
    session_start();
-   $_SESSION['cart'] = 'test';
+   if(isset($_POST['item'])) {
+      if(isset($_SESSION['cart'])) {
+         $_SESSION['cart'].array_push($_POST['item']);
+      } else {
+         $_SESSION['cart'] = array($_POST['item']);
+      }
+   }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,13 +29,15 @@
    <main>
       <div id='itemscontainer'>
          <div>
-            <button type='button' onclick='addToCart()'>Add</button>
+            <button type='button' class='addCart' value='Watch1'>Add</button>
          </div>
+         <?php echo $_SESSION['cart'];?>
       </div>
    </main>
    <footer>
       <p> &copy; Jaden Wilson 2020 (CSE 341, BYUI)
    </footer>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src='functions.js'></script>
 </html>
