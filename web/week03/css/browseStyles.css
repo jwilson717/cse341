@@ -13,6 +13,7 @@ main {
    margin: 15px;
    flex-basis: 21%;
    background-color: white;
+   border-radius: 10px;
 }
 
 h2 {
@@ -22,4 +23,8 @@ h2 {
 .itemimg, .addCart {
    display: block;
    margin: auto;
+}
+
+.itemimg {
+   margin-top: 5px;
 }
