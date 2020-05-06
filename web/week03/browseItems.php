@@ -15,6 +15,7 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Shop</title>
+   <link rel='stylesheet' type='text/css' href='css/browseStyles.css'>
 </head>
 <body>
    <header>
@@ -30,9 +31,9 @@
    <main>
       <div id='itemscontainer'>
          <?php
-            $watches = array('Analog Calendar'=>'analogCalendar.png', 'Digital'=>'digital.jpg', 'Modern Horizontal'=>'modernhroizontal.png', 'Roman Numeral'=>'romanNumeral', 'Tactical'=>'tactical.jpg', 'Wooden'=>'wood.jpg');
+            $watches = array('Analog Calendar'=>'analogCalendar.png', 'Digital'=>'digital.jpg', 'Modern Horizontal'=>'modernhorizontal.png', 'Roman Numeral'=>'romanNumeral', 'Tactical'=>'tactical.jpg', 'Wooden'=>'wood.jpg');
             foreach ($watches as $t=>$f) {
-               $item = "<div class='item'> <img src='images/$f' alt='$t Watch' width='300' height='300' class='itemimg'>";
+               $item = "<div class='item'> <img src='images/$f' alt='$t Watch' width='200' height='200' class='itemimg'>";
                $item .= "<button type='button' class='addCart' value='$t'> Add to Cart</button> </div>";
                echo $item;
             }
