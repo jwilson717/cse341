@@ -30,6 +30,14 @@
    <main>
       <div id='itemscontainer'>
          <div>
+            <?php
+               $watches = array('Analog Calendar'=>'analogCalendar.png', 'Digital'=>'digital.jpg', 'Modern Horizontal'=>'modernhroizontal.png', 'Roman Numeral'=>'romanNumeral', 'Tactical'=>'tactical.jpg', 'Wooden'=>'wood.jpg');
+               foreach ($watches as $t=>$f) {
+                  $item = "<div class='item'> <img src='$f' alt='$t Watch' width='300' height='300' class='itemimg'>";
+                  $item .= "<button type='button' class='addCart' value='$t'> Add to Cart</button> </div>";
+                  echo $item;
+               }
+            ?>
             <button type='button' class='addCart' value='Watch1'>Add</button>
          </div>
       </div>
