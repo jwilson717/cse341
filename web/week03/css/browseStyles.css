@@ -1,7 +1,15 @@
+main {
+   margin: 25px auto;
+}
+
 #itemscontainer {
    display: flex;
    justify-content: center;
    flex-wrap: wrap;
+}
+
+.item {
+   margin: 15px;
 }
 
 .itemimg, .addCart {
