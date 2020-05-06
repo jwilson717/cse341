@@ -15,11 +15,12 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Shop</title>
+   <link rel='styleshee' type='tex/css' href='css/styles.css'>
    <link rel='stylesheet' type='text/css' href='css/browseStyles.css'>
 </head>
 <body>
    <header>
-      <h1>Wilsons Watches</h1>
+      <h1 id='siteTitle'>Wilsons Watches</h1>
    </header>
    <hr>
    <nav>
