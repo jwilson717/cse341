@@ -12,6 +12,7 @@ main {
 .item {
    margin: 15px;
    flex-basis: 21%;
+   background-color: white;
 }
 
 h2 {
