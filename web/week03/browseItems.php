@@ -24,6 +24,7 @@
    <nav>
       <ul>
          <li><a href='browseItems.php'>Home</a></li>
+         <li><a href='cart.php'>Cart</a></li>
       </ul>
    </nav>
    <main>
