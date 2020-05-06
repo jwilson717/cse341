@@ -8,6 +8,10 @@ header {
    padding: 1px;
 }
 
+hr {
+   margin: 0;
+}
+
 #siteTitle {
    text-align: center;
 }
