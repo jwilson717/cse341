@@ -1,3 +1,9 @@
+#itemscontainer {
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+}
+
 .itemimg {
    display: block;
    margin: auto;
