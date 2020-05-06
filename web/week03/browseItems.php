@@ -2,7 +2,7 @@
    session_start();
    if(isset($_POST['item'])) {
       if(isset($_SESSION['cart'])) {
-         $_SESSION['cart'].array_push($_POST['item']);
+         array_push($_SESSION['cart'], $_POST['item']);
       } else {
          $_SESSION['cart'] = array($_POST['item']);
       }
