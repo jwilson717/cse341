@@ -9,6 +9,8 @@
    <title>Cart</title>
 </head>
 <body>
-   <?php echo $_SESSION['cart'];?>
+   <?php foreach ($_SESSION['cart'] as $i) {
+      echo $i;  
+   }?>
 </body>
 </html>

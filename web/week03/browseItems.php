@@ -31,7 +31,6 @@
          <div>
             <button type='button' class='addCart' value='Watch1'>Add</button>
          </div>
-         <?php print_r($_SESSION['cart']);?>
       </div>
    </main>
    <footer>
