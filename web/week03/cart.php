@@ -27,14 +27,14 @@
       <?php 
          if (!isset($_SESSION['cart'])) {
             echo '<h2>Your Cart is Empty</h2>';
-            echo "<button type='button' id='continue' onclick=" . "window.location.href='browseItems.php';" . ">Continue Shopping</button";
+            echo "<button type='button' id='continue' onclick=" . "window.location.href='browseItems.php';" . ">Continue Shopping</button>";
          } else {
             foreach ($items as $i=>$f) {
                if (array_search($i, $_SESSION['cart'], true)) {
-                  $cartItem = "<div class='cartItem'> <h2>$i</h2> <img src='images/$f' alt='$i' width='150' height='150' class='cartImg'></div>";
+                  $cartItem = "<div class='cartItem'> <h2>$i</h2> <img src='images/$f' alt='$i' width='150' height='150' class='cartImg'>";
                   $counts = array_count_values($_SESSION['cart']);
                   $q = $counts[$i];
-                  $cartItem .= "<span class='quantity'>Quantity: $q</span>";
+                  $cartItem .= "<span class='quantity'>Quantity: $q</span> </div>";
                   echo $cartItem;
                }
             } 
