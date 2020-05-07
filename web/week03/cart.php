@@ -33,9 +33,9 @@
                   include 'cartItem.php';
                }
             } 
+            echo "<button type='button' id='checkout' onclick=" . "" . ">Checkout</button>";
          }
          echo "<button type='button' id='continue' onclick=" . "window.location.href='browseItems.php';" . ">Continue Shopping</button>";
-         echo "<button type='button' id='checkout' onclick=" . "" . ">Checkout</button>";
       ?>
    </main>
    <footer>
