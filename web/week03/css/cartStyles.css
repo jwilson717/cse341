@@ -10,6 +10,15 @@ main h2 {
    text-align: left;
 }
 
+#empty {
+   text-align: center;
+}
+
+#continue {
+   display: block;
+   margin: auto;
+}
+
 .cartItem {
    background-color: white;
 }

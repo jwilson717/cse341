@@ -26,7 +26,7 @@
    <main>
       <?php 
          if (!isset($_SESSION['cart'])) {
-            echo '<h2>Your Cart is Empty</h2>';
+            echo "<h2 id='empty'>Your Cart is Empty</h2>";
             echo "<button type='button' id='continue' onclick=" . "window.location.href='browseItems.php';" . ">Continue Shopping</button>";
          } else {
             foreach ($items as $i=>$f) {
