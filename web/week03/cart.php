@@ -34,7 +34,7 @@
                   $cartItem = "<div class='cartItem'> <h2>$i</h2> <img src='images/$f' alt='$i' width='150' height='150'></div>";
                   $counts = array_count_values($_SESSION['cart']);
                   $q = $counts[$i];
-                  $cartItem .= "<span class='quantity'>Quantity: <?php echo $q;?> </span>";
+                  $cartItem .= "<span class='quantity'>Quantity: $q</span>";
                   echo $cartItem;
                }
             } 
