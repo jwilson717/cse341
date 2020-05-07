@@ -36,3 +36,9 @@ main {
 #checkoutb {
    text-align: right;
 }
+
+@media screen and (max-width: 400px) {
+   main {
+      margin: 0;
+   }
+}
