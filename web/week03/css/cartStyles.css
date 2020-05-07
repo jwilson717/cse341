@@ -1,3 +1,19 @@
 h2 {
    text-align: center;
 }
+
+main {
+   margin: auto 50px;
+}
+
+main h2 {
+   text-align: left;
+}
+
+.cartItem {
+   background-color: white;
+}
+
+.cartImg {
+   margin: 5px;
+}
