@@ -30,4 +30,9 @@ main {
 
 #checkout {
    background-color: orange;
+   font-size: 1.2em;
+}
+
+#checkoutb {
+   text-align: right;
 }
