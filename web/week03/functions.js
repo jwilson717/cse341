@@ -12,7 +12,7 @@ $(document).ready(function () {
       let url = 'cartRemove.php';
       let data = {'action': 'removeone', 'item': val};
       $.post(url, data, function () {
-         return;
+         location.reload();
       });
    });
 });
