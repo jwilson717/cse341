@@ -1,5 +1,7 @@
 <?php
    session_start();
+   $_SESSION['watches'] = array('Analog Calendar'=>'analogCalendar.png', 'Digital'=>'digital.jpg', 'Modern Horizontal'=>'modernhorizontal.png', 'Roman Numeral'=>'romanNumeral.jpg', 'Tactical'=>'tactical.jpg', 'Wooden'=>'wood.jpg');
+
    if(isset($_POST['item'])) {
       if(isset($_SESSION['cart'])) {
          array_push($_SESSION['cart'], $_POST['item']);
@@ -32,7 +34,7 @@
    <main>
       <div id='itemscontainer'>
          <?php
-            $watches = array('Analog Calendar'=>'analogCalendar.png', 'Digital'=>'digital.jpg', 'Modern Horizontal'=>'modernhorizontal.png', 'Roman Numeral'=>'romanNumeral.jpg', 'Tactical'=>'tactical.jpg', 'Wooden'=>'wood.jpg');
+            $watches = $_SESSION['watches'];
             foreach ($watches as $t=>$f) {
                $item = "<div class='item'> <img src='images/$f' alt='$t Watch' width='250' height='250' class='itemimg'>";
                $item .= "<h2>$t</h2>";
