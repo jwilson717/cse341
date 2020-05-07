@@ -1,5 +1,5 @@
 main {
-   margin: auto 50px;
+   margin: auto 100px;
 }
 
 .itemTitle {
@@ -22,4 +22,8 @@ main {
 
 .cartImg {
    margin: 5px;
+}
+
+.details {
+   float: right;
 }
