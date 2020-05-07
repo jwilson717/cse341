@@ -25,7 +25,7 @@
    </nav>
    <main>
       <?php 
-         if (!isset($_SESSION['cart'])) {
+         if (!isset($_SESSION['cart']) || count($_SESSION['cart']) == 0) {
             echo "<h2 id='empty'>Your Cart is Empty</h2>";
          } else {
             foreach ($items as $i=>$f) {
