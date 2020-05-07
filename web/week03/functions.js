@@ -7,7 +7,7 @@ $(document).ready(function () {
          return;
       });
    });
-   $('removeone').click(function() {
+   $('.removeone').click(function() {
       let val = $(this).val();
       let url = 'cartRemove.php';
       let data = {'action': 'removeone', 'item': val};
