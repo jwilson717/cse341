@@ -30,8 +30,8 @@
             echo "<button type='button' id='continue' onclick=" . "window.location.href='browseItems.php';" . ">Continue Shopping</button";
          } else {
             foreach ($items as $i=>$f) {
-               if (array_search($i, $_SESSION['cart'], true)) {
-                  $cartItem = "<div id='cartItem'> <h2>$i</h2> <img src='$f' alt='$i' width='250' height='250'></div>";
+               if (array_search($i, $_SESSION['cart'], true) != false) {
+                  $cartItem = "<div id='cartItem'> <h2>$i</h2> <img src='images/$f' alt='$i' width='250' height='250'></div>";
                   echo $cartItem;
                }
             } 
