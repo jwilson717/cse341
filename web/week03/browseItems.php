@@ -6,7 +6,7 @@
       if(isset($_SESSION['cart'])) {
          array_push($_SESSION['cart'], $_POST['item']);
       } else {
-         $_SESSION['cart'] = array($_POST['item']);
+         $_SESSION['cart'] = array(' ', $_POST['item']);
       }
    }
 
