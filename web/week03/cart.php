@@ -33,6 +33,7 @@
                if (array_search($i, $_SESSION['cart'], true)) {
                   $cartItem = "<div class='cartItem'> <h2>$i</h2> <img src='images/$f' alt='$i' width='150' height='150'></div>";
                   $counts = array_count_values($_SESSION['cart']);
+                  echo $counts['Digital'];
                   $cartItem .= "<span class='quantity'>Quantity: <?php echo $counts[$i];?> </span>";
                   echo $cartItem;
                }
