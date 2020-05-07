@@ -31,7 +31,7 @@
          } else {
             foreach ($items as $i=>$f) {
                if (array_search($i, $_SESSION['cart'], true)) {
-                  $cartItem = "<div class='cartItem'> <h2>$i</h2> <img src='images/$f' alt='$i' width='150' height='150' class='cartImg'>";
+                  $cartItem = "<div class='cartItem'> <h2 class='itemTitle'>$i</h2> <img src='images/$f' alt='$i' width='150' height='150' class='cartImg'>";
                   $counts = array_count_values($_SESSION['cart']);
                   $q = $counts[$i];
                   $cartItem .= "<span class='quantity'>Quantity: $q</span> </div>";

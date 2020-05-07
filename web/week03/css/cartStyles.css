@@ -1,13 +1,10 @@
-h2 {
-   text-align: center;
-}
-
 main {
    margin: auto 50px;
 }
 
-main h2 {
+.itemTitle {
    text-align: left;
+   margin-left: 10px;
 }
 
 #empty {
