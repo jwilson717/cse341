@@ -5,6 +5,6 @@
     $counts = array_count_values($_SESSION['cart']);
     $q = $counts[$i];
     $cartItem .= "<div class='details'> <span class='quantity'>Quantity: $q</span>
-    <button type='button' class='remove' value='removeone'>Remove One </button> <button type='button' class='remove' value='removeall'>Remove</button></div> </div>";
+    <button type='button' class='removeone' value='$i'>Remove One </button> <button type='button' class='removeall' value='$i'>Remove</button></div> </div>";
     echo $cartItem;
 ?>
