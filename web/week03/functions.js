@@ -15,4 +15,13 @@ $(document).ready(function () {
          location.reload();
       });
    });
+
+   $('.removeall').click(function() {
+      let val = $(this).val();
+      let url = 'cartRemove.php';
+      let data = {'action': 'removeall', 'item': val};
+      $.post(url, data, function () {
+         location.reload();
+      });
+   });
 });
