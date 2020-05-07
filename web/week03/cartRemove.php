@@ -6,7 +6,10 @@
          $index = array_search($_POST['item'], $_SESSION['cart'], true);
          array_splice($_SESSION['cart'], $index, 1);
       } else if ($_POST['action'] == 'removeall') {
-
+         while(array_search($_POST['item'],$_SESSION['cart'], true)) {
+            $index = array_search($_POST['item'], $_SESSION['cart'], true);
+            array_splice($_SESSION['cart'], $index, 1);
+         }
       }
    }
 ?>
