@@ -1,6 +1,12 @@
 <?php
    session_start();
 
+   if (isset($_POST['streeta']) && isset($_POST['city']) && isset($_POST['state']) && isset($_POST['zip'])) {
+      $sucess = "Your order was placed successfully!";
+   } else {
+      $success = 'Your order could not be placed at this time.';
+   }
+
    if (isset($_POST['streeta'])){
       $street = htmlspecialchars($_POST['streeta']);
    } else {
@@ -49,6 +55,9 @@
    <div id='items'>
    <h2 id='itemsTitle'>Your Items</h2>
       <?php
+         if (isset($success)){
+            echo "<h2 id='orderPlaced'>$success</h2>";
+         }
          foreach ($_SESSION['watches'] as $i=>$f) {
             if (array_search($i, $_SESSION['cart'], true)) {
                $counts = array_count_values($_SESSION['cart']);
