@@ -5,3 +5,9 @@ main {
 body {
    text-align: center;
 }
+
+@media screen and (max-width: 350px) {
+   main {
+      margin: 0;
+   }
+}
