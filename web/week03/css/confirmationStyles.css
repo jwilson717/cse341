@@ -10,6 +10,11 @@ body {
    background-color: white;
 }
 
+#continue {
+   display: block;
+   margin: auto;
+}
+
 @media screen and (max-width: 400px) {
    main {
       margin: 0;

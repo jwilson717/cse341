@@ -54,9 +54,7 @@
    <main>
    <div id='items'>
       <?php
-         if (isset($success)){
-            echo "<h2 id='orderPlaced'>$success</h2>";
-         }
+         echo "<h2 id='orderPlaced'>$success</h2>";
          echo "<h2 id='itemsTitle'>Your Items</h2>";
          foreach ($_SESSION['watches'] as $i=>$f) {
             if (array_search($i, $_SESSION['cart'], true)) {
@@ -68,6 +66,10 @@
          echo "<h2> Shipping Address</h2>";
          echo "<p>$street</p>";
          echo "<p>$city, $state $zip</p>";
+         if ($success == "Your order was placed successfully!") {
+            $SESSION['cart'] = array('');
+         }
+         echo "<button type='button' id='continue' onclick=" . "window.location.href='browseItems.php';" . ">Return to Shop Page</button>";
       ?>
     </div>
    </main>
