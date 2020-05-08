@@ -36,6 +36,12 @@ nav li {
 nav a {
    text-decoration: none;
    padding: 10px;
+   color: black;
+}
+
+nav a:hover {
+   background-color: white;
+   color: gray;
 }
 
 footer {
