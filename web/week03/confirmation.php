@@ -26,9 +26,9 @@
    }
 
    if (isset($_POST['zip'])){
-      $state = htmlspecialchars($_POST['zip']);
+      $zip = htmlspecialchars($_POST['zip']);
    } else {
-      $state = '';
+      $zip = '';
    }
 ?>
 <!DOCTYPE html>
