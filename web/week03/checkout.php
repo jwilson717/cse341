@@ -1,15 +1,5 @@
 <?php
    session_start();
-   $_SESSION['watches'] = array('Analog Calendar'=>'analogCalendar.png', 'Digital'=>'digital.jpg', 'Modern Horizontal'=>'modernhorizontal.png', 'Roman Numeral'=>'romanNumeral.jpg', 'Tactical'=>'tactical.jpg', 'Wooden'=>'wood.jpg');
-
-   if(isset($_POST['item'])) {
-      if(isset($_SESSION['cart'])) {
-         array_push($_SESSION['cart'], $_POST['item']);
-      } else {
-         $_SESSION['cart'] = array(' ', $_POST['item']);
-      }
-   }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,7 +22,19 @@
       </ul>
    </nav>
    <main>
-     
+     <h2>Checkout</h2>
+     <form action="confirmation.php" method='post'>
+     <label for="streeta">Street Address: </label>
+     <input type="text" id='streeta' name='streeta'><br>
+     <label for="city">City: </label>
+     <input type="text" id='city' name='city'><br>
+      <label for="state">State: </label>
+      <input type="text" id='state' name='state'><br>
+      <label for="zip">Zip: </label>
+      <input type="text" id='zip' name='zip'>
+      <button type='button' onclick="window.location.href='cart.php';">Return to Cart</button>
+      <input type="submit" value='Place Order' id='placeorder'>
+     </form>
    </main>
    <footer>
       <p> &copy; Jaden Wilson 2020 (CSE 341, BYUI)
