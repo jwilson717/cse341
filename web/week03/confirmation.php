@@ -2,9 +2,9 @@
    session_start();
 
    if (isset($_POST['streeta']) && isset($_POST['city']) && isset($_POST['state']) && isset($_POST['zip'])) {
-      $success = "Your order was placed successfully!";
+      $success = True;
    } else {
-      $success = 'Your order could not be placed at this time.';
+      $success = False;
    }
 
    if (isset($_POST['streeta'])){
@@ -54,7 +54,11 @@
    <main>
    <div id='items'>
       <?php
-         echo "<h2 id='orderPlaced'>$success</h2>";
+         if($success){
+            echo "<h2 id='orderPlaced'>Your order was placed successfully</h2>";
+         } else {
+            echo "<h2 id='orderPlaced'>Your order could not be placed at this time.</h2>";
+         }
          echo "<h2 id='itemsTitle'>Your Items</h2>";
          foreach ($_SESSION['watches'] as $i=>$f) {
             if (array_search($i, $_SESSION['cart'], true)) {
@@ -69,9 +73,9 @@
          if ($success == "Your order was placed successfully!") {
             $SESSION['cart'] = array('');
          }
-         echo "<button type='button' id='continue' onclick=" . "window.location.href='browseItems.php';" . ">Return to Shop Page</button>";
       ?>
     </div>
+    <button type='button' id='continue' onclick="window.location.href='browseItems.php';">Continue Shopping</button>
    </main>
    <footer>
       <p> &copy; Jaden Wilson 2020 (CSE 341, BYUI)
