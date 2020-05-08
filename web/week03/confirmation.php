@@ -2,7 +2,7 @@
    session_start();
 
    if (isset($_POST['streeta']) && isset($_POST['city']) && isset($_POST['state']) && isset($_POST['zip'])) {
-      $sucess = "Your order was placed successfully!";
+      $success = "Your order was placed successfully!";
    } else {
       $success = 'Your order could not be placed at this time.';
    }
