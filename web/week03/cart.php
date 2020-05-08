@@ -33,7 +33,7 @@
                   include 'cartItem.php';
                }
             } 
-            echo "<div id='checkoutb'><button type='button' id='checkout' onclick=" . "" . ">Checkout</button></div>";
+            echo "<div id='checkoutb'><button type='button' id='checkout' onclick=" . "window.location.href='checkout.php" . ">Checkout</button></div>";
          }
          echo "<button type='button' id='continue' onclick=" . "window.location.href='browseItems.php';" . ">Continue Shopping</button>";
       ?>
