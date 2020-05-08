@@ -53,6 +53,10 @@
                $q = $counts[$i];
                echo "<p>$i: $q</p>";
             }
+            echo "<p>$street</p>";
+            echo "<p>$city</p>";
+            echo "<p>$state</p>";
+            echo "<p>$zip</p>";
          } 
       ?>
     </div>
