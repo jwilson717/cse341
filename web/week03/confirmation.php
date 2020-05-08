@@ -46,6 +46,7 @@
    </nav>
    <main>
    <div id='items'>
+   <h2 id='itemsTitle'>Your Items</h2>
       <?php
          foreach ($_SESSION['watches'] as $i=>$f) {
             if (array_search($i, $_SESSION['cart'], true)) {
@@ -53,6 +54,7 @@
                $q = $counts[$i];
                echo "<p>$i: $q</p>";
             }
+            echo "<h2> Shipping Address<h2>";
             echo "<p>$street</p>";
             echo "<p>$city</p>";
             echo "<p>$state</p>";
