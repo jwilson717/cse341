@@ -1,5 +1,29 @@
 <?php
    session_start();
+
+   if (isset($_POST['streeta'])){
+      $street = htmlspecialchars($_POST['streeta']);
+   } else {
+      $street = '';
+   }
+
+   if (isset($_POST['city'])){
+      $city = htmlspecialchars($_POST['city']);
+   } else {
+      $city = '';
+   }
+
+   if (isset($_POST['state'])){
+      $state = htmlspecialchars($_POST['state']);
+   } else {
+      $state = '';
+   }
+
+   if (isset($_POST['zip'])){
+      $state = htmlspecialchars($_POST['zip']);
+   } else {
+      $state = '';
+   }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +45,17 @@
       </ul>
    </nav>
    <main>
-    
+   <div id='items'>
+      <?php
+         foreach ($_SESSION['watches'] as $i=>$f) {
+            if (array_search($i, $_SESSION['cart'], true)) {
+               $counts = array_count_values($_SESSION['cart']);
+               $q = $counts[$i];
+               echo "<p>$i: $q</p>";
+            }
+         } 
+      ?>
+    </div>
    </main>
    <footer>
       <p> &copy; Jaden Wilson 2020 (CSE 341, BYUI)

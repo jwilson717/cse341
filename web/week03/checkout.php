@@ -25,13 +25,13 @@
      <h2>Checkout</h2>
      <form id='checkoutForm' action="confirmation.php" method='post'>
      <label for="streeta">Street Address: </label>
-     <input type="text" id='streeta' name='streeta'><br>
+     <input type="text" id='streeta' name='streeta' required><br>
      <label for="city">City: </label>
-     <input type="text" id='city' name='city'><br>
+     <input type="text" id='city' name='city' required><br>
       <label for="state">State: </label>
-      <input type="text" id='state' name='state'><br>
+      <input type="text" id='state' name='state' required><br>
       <label for="zip">Zip: </label>
-      <input type="text" id='zip' name='zip'><br>
+      <input type="text" id='zip' name='zip' required><br>
       <button type='button' onclick="window.location.href='cart.php';">Return to Cart</button>
       <input type="submit" value='Place Order' id='placeorder'>
      </form>
