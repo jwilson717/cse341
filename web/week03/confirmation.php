@@ -32,6 +32,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Shop</title>
    <link rel='stylesheet' type='text/css' href='css/styles.css'>
+   <link rel='stylesheet' type="text/css" href='css/confirmationStyles.css'>
 </head>
 <body>
    <header>
@@ -52,7 +53,7 @@
             if (array_search($i, $_SESSION['cart'], true)) {
                $counts = array_count_values($_SESSION['cart']);
                $q = $counts[$i];
-               echo "<p>$i: $q</p>";
+               echo "<p>$i watch: $q</p>";
             }
          }
          echo "<h2> Shipping Address</h2>";
