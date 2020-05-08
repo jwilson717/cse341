@@ -8,7 +8,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Shop</title>
    <link rel='stylesheet' type='text/css' href='css/styles.css'>
-   <link rel='stylesheet' type='text/css' href='css/browseStyles.css'>
+   <link rel='stylesheet' type='text/css' href='css/checkoutStyles.css'>
 </head>
 <body>
    <header>
@@ -23,7 +23,7 @@
    </nav>
    <main>
      <h2>Checkout</h2>
-     <form action="confirmation.php" method='post'>
+     <form id='checkoutForm' action="confirmation.php" method='post'>
      <label for="streeta">Street Address: </label>
      <input type="text" id='streeta' name='streeta'><br>
      <label for="city">City: </label>
@@ -31,7 +31,7 @@
       <label for="state">State: </label>
       <input type="text" id='state' name='state'><br>
       <label for="zip">Zip: </label>
-      <input type="text" id='zip' name='zip'>
+      <input type="text" id='zip' name='zip'><br>
       <button type='button' onclick="window.location.href='cart.php';">Return to Cart</button>
       <input type="submit" value='Place Order' id='placeorder'>
      </form>
