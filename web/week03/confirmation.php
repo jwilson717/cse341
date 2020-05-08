@@ -57,9 +57,7 @@
          }
          echo "<h2> Shipping Address</h2>";
          echo "<p>$street</p>";
-         echo "<p>$city</p>";
-         echo "<p>$state</p>";
-         echo "<p>$zip</p>"; 
+         echo "<p>$city, $state $zip</p>";
       ?>
     </div>
    </main>
