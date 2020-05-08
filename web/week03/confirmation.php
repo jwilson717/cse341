@@ -70,8 +70,8 @@
          echo "<h2> Shipping Address</h2>";
          echo "<p>$street</p>";
          echo "<p>$city, $state $zip</p>";
-         if ($success == "Your order was placed successfully!") {
-            $SESSION['cart'] = array('');
+         if ($success) {
+            $_SESSION['cart'] = array('');
          }
       ?>
     </div>
