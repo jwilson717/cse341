@@ -69,7 +69,7 @@
                echo "<p>$i watch: $q</p>";
             }
          }
-         echo "<p>Total: $$total</p>";
+         echo "<p id='total'>Total: $$total</p>";
          echo "<h2> Shipping Address</h2>";
          echo "<p>$street</p>";
          echo "<p>$city, $state $zip</p>";
