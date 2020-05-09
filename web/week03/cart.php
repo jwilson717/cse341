@@ -1,6 +1,7 @@
 <?php
    session_start();
    $items = $_SESSION['watches'];
+   $_SESSION['total'] = 0;
 
 ?>
 <!DOCTYPE html>
