@@ -1,5 +1,4 @@
 <?php
-    $_SESSION['total'] = 0;
     $cartItem = "<div class='cartItem'> 
     <h2 class='itemTitle'>$i Watch</h2> 
     <img src='images/$f' alt='$i' width='150' height='150' class='cartImg'>";
