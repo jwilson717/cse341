@@ -33,6 +33,8 @@
                   include 'cartItem.php';
                }
             } 
+            $total = $_SESSION['total'];
+            echo "<div id='total'> <h3>Total: $total</h3></div>";
             echo "<div id='checkoutb'><button type='button' id='checkout' onclick=" . "window.location.href='checkout.php';" . ">Checkout</button></div>";
          }
          echo "<button type='button' id='continue' onclick=" . "window.location.href='browseItems.php';" . ">Continue Shopping</button>";
