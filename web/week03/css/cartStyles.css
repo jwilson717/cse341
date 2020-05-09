@@ -28,6 +28,10 @@ main {
    float: right;
 }
 
+#total {
+   text-align: right;
+}
+
 #checkout {
    background-color: orange;
    font-size: 1.2em;
