@@ -8,6 +8,6 @@
     $_SESSION['total'] += $price;
     $cartItem .= "<div class='details'> <span class='quantity'>Quantity: $q</span>
     <button type='button' class='removeone' value='$i'>Remove One </button> <button type='button' class='removeall' value='$i'>Remove</button><br>
-    <span id='price'>Price: $price</span></div> </div>";
+    <span id='price'>Price: $$price</span></div> </div>";
     echo $cartItem;
 ?>
