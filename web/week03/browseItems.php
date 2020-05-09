@@ -1,7 +1,7 @@
 <?php
    session_start();
    $_SESSION['watches'] = array('Analog Calendar'=>'analogCalendar.png', 'Digital'=>'digital.jpg', 'Modern Horizontal'=>'modernhorizontal.png', 'Roman Numeral'=>'romanNumeral.jpg', 'Tactical'=>'tactical.jpg', 'Wooden'=>'wood.jpg');
-
+   $_SESSION['prices'] = array('Analog Calendar'=>19.99, 'Digital'=>14.99, 'Modern Horizontal'=>19.99, 'Roman Numeral'=>19.99, 'Tactical'=>14.99, 'Wooden'=>12.99);
    if(isset($_POST['item'])) {
       if(isset($_SESSION['cart'])) {
          array_push($_SESSION['cart'], $_POST['item']);
@@ -36,8 +36,10 @@
          <?php
             $watches = $_SESSION['watches'];
             foreach ($watches as $t=>$f) {
+               $price = $_SESSION['prices'][$t];
                $item = "<div class='item'> <img src='images/$f' alt='$t Watch' width='250' height='250' class='itemimg'>";
                $item .= "<h2>$t</h2>";
+               $item .= "<h3>$price<h3>";
                $item .= "<button type='button' class='addCart' value='$t'> Add to Cart</button> </div>";
                echo $item;
             }
