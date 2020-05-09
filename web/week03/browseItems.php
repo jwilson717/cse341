@@ -39,7 +39,7 @@
                $price = $_SESSION['prices'][$t];
                $item = "<div class='item'> <img src='images/$f' alt='$t Watch' width='250' height='250' class='itemimg'>";
                $item .= "<h2>$t</h2>";
-               $item .= "<h3>$price<h3>";
+               $item .= "<h3>$$price<h3>";
                $item .= "<button type='button' class='addCart' value='$t'> Add to Cart</button> </div>";
                echo $item;
             }
