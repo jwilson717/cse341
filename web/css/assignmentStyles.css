@@ -7,6 +7,26 @@ main {
    margin: 0;
 }
 
+ul {
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+   width: 75%;
+   margin: auto;
+   margin-top: 40px;
+}
+li {
+   margin: 5px;
+   border: 1px solid grey;
+   border-radius: 10px;
+   box-shadow: 3px 3px 3px darkslategrey;
+}
+li a {
+   display: block;
+   padding: 25px;
+   font-size: 30px;
+}
+
 
 @media screen and (max-width: 350px) {
    #pagename {
