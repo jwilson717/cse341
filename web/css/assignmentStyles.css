@@ -20,7 +20,8 @@ main {
    margin: 5px;
    border: 1px solid grey;
    border-radius: 10px;
-   box-shadow: 3px 3px 3px darkslategrey;
+   box-shadow: 3px 3px 3px black;
+   background-color: darkslategray;
 }
 #assignments li a {
    display: block;
