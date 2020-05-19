@@ -24,7 +24,6 @@ CREATE TABLE patient (
    record_num int PRIMARY KEY
    , f_name VARCHAR(100) NOT NULL
    , l_name VARCHAR(100) NOT NULL
-   , age int NOT NULL
    , dob DATE NOT NULL
    , insurance_id int
    , FOREIGN KEY (insurance_id) REFERENCES insurance (insurance_id)
@@ -33,6 +32,7 @@ CREATE TABLE patient (
 CREATE TABLE surgery (
    surgery_id SERIAL PRIMARY KEY
    , patient_id int NOT NULL
+   , age int NOT NULL
    , surgery_date DATE NOT NULL
    , procedure VARCHAR(100) NOT NULL
    , procedure_duration INT
@@ -43,7 +43,7 @@ CREATE TABLE surgery (
 );
 
 CREATE TABLE pathology_connect (
-   pathology_conect_id SERIAL PRIMARY KEY
+   pathology_connect_id SERIAL PRIMARY KEY
    , surgery_id int NOT NULL 
    , pathology_id int NOT NULL 
    , FOREIGN KEY (surgery_id) REFERENCES surgery (surgery_id)
