@@ -23,10 +23,10 @@
         die();
       }
 
-   $statement = $db->prepare('SELECT * FROM Scriptures WHERE id = :id');
-   $statement->bindValue(':id', $verse, PDO::PARAM_INT);
-   $statement->execute();
-   $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+   // $statement = $db->prepare('SELECT * FROM Scriptures WHERE id = :id');
+   // $statement->bindValue(':id', $verse, PDO::PARAM_INT);
+   // $statement->execute();
+   // $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="en">

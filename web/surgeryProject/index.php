@@ -1,6 +1,6 @@
 <?php
    session_start();
-   include login.php;
+   require login.php;
 ?>
 <!-- <!DOCTYPE html>
 <html lang="en">
