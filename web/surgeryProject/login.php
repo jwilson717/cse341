@@ -37,14 +37,20 @@
    <link rel='stylesheet' type='text/css' href='css/bootstrap.min.css'>
 </head>
 <body>
-   <h2>Please Sign In</h2>
-   <form action="login.php" method="post">
-      <label for="username">Username</label>
-      <input type="text" name="username" id="username"><br>
-      <label for="passwd">Password</label>
-      <input type="text" name="passwd" id="passwd"><br>
-      <input type='submit' value='login' class='btn btn-primary'>
-   </form>
+   <div class='container'>
+      <div class='row justify-content-center'>
+         <div class='col-4'>
+            <h2>Please Sign In</h2>
+            <form action="login.php" method="post">
+               <label for="username">Username</label>
+               <input type="text" name="username" id="username"><br>
+               <label for="passwd">Password</label>
+               <input type="text" name="passwd" id="passwd"><br>
+               <input type='submit' value='login' class='btn btn-primary'>
+            </form>
+         </div>
+      </div>
+   </div>
 </body>
 </html>
 
