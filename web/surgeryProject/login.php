@@ -40,7 +40,7 @@
 <body>
    <div class='container'>
       <div class='row justify-content-center vh-100'>
-         <div class='col-4 text-center align-self-center border border-light rounded-lg'>
+         <div class='col-6 text-center align-self-center border border-light rounded-lg p-4'>
             <h2>Please Sign In</h2>
             <form action="login.php" method="post">
                <label for="username">Username</label>
