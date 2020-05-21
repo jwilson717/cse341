@@ -33,7 +33,8 @@
          $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 
          if(count($results) > 0) {
-            header('index.php');
+            // header('index.php');
+            echo 'Success';
          }
       }
 ?>
