@@ -46,7 +46,7 @@
                <label for="username">Username</label>
                <input type="text" name="username" id="username"><br>
                <label for="passwd">Password</label>
-               <input type="text" name="passwd" id="passwd"><br>
+               <input type="password" name="passwd" id="passwd"><br>
                <input type='submit' value='login' class='btn btn-primary'>
             </form>
          </div>
