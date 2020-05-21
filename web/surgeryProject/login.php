@@ -23,10 +23,19 @@
         die();
       }
 
-   // $statement = $db->prepare('SELECT * FROM Scriptures WHERE id = :id');
-   // $statement->bindValue(':id', $verse, PDO::PARAM_INT);
-   // $statement->execute();
-   // $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+      if(isset($_POST['username']) && isset($_POST['passwd'])){
+         $username = htmlspecialchars($_POST['username']);
+         $passwd = htmlspecialchars($_POST['passwd']);
+         $statement = $db->prepare('SELECT * FROM system_user where username = :username and password = :password');
+         $statement->bindValue(':username', $username);
+         $statement->bindValue(':password', $passwd);
+         $statement->execute();
+         $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+         if(count($results) > 0) {
+            header('index.php');
+         }
+      }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,9 +53,9 @@
             <h2>Please Sign In</h2>
             <form action="login.php" method="post">
                <label for="username">Username</label>
-               <input type="text" name="username" id="username"><br>
+               <input type="text" name="username" id="username" required><br>
                <label for="passwd">Password</label>
-               <input type="password" name="passwd" id="passwd"><br>
+               <input type="password" name="passwd" id="passwd" required><br>
                <input type='submit' value='login' class='btn btn-primary'>
             </form>
          </div>

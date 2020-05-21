@@ -1,15 +1,14 @@
 <?php
    session_start();
-   require login.php;
 ?>
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Surgeries</title>
+   <title>Surgery List</title>
 </head>
 <body>
-   
+   Test
 </body>
-</html> -->
+</html>
