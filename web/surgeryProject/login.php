@@ -34,34 +34,25 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Login</title>
-   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+   <link rel='stylesheet' type='text/css' href='css/bootstrap.min.css'>
 </head>
 <body>
-   <div class="wrapper fadeInDown">
-   <div id="formContent">
-      <!-- Tabs Titles -->
-
-      <!-- Icon -->
-      <div class="fadeIn first">
-         <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" />
+<form class="form-signin">
+      <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+      <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+      <label for="inputEmail" class="sr-only">Email address</label>
+      <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+      <label for="inputPassword" class="sr-only">Password</label>
+      <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
       </div>
-
-      <!-- Login Form -->
-      <form>
-         <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
-         <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
-         <input type="submit" class="fadeIn fourth" value="Log In">
-      </form>
-
-      <!-- Remind Passowrd -->
-      <div id="formFooter">
-         <a class="underlineHover" href="#">Forgot Password?</a>
-      </div>
-
-   </div>
-   </div>
-   
-   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+    </form>
 </body>
 </html>
+
+
