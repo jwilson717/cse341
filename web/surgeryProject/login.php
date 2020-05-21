@@ -39,7 +39,7 @@
 <body>
    <div class='container'>
       <div class='row justify-content-center'>
-         <div class='col-4'>
+         <div class='col-4 text-center'>
             <h2>Please Sign In</h2>
             <form action="login.php" method="post">
                <label for="username">Username</label>
