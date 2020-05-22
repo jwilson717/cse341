@@ -55,7 +55,7 @@
          $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
          foreach ($rows as $row=>$r) {
             echo "<div class='border border-dark'> <h2>" . $r['f_name'] . ' ' . $r['l_name'] . "</h2>";
-            echo "<p>" . $r['surgery_date'] . " " . $r['Procedure'] . "</p></div>";
+            echo "<p>" . $r['surgery_date'] . " " . $r['procedure'] . "</p></div>";
          }
       ?>
    </main>
