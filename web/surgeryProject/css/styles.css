@@ -14,7 +14,7 @@ nav li {
 }
 
 nav a {
-   text-decoration: none;
+   text-decoration: none !important;
    padding: 10px;
    color: black;
 }
