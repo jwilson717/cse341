@@ -1,0 +1,19 @@
+#pagetitle {
+   padding: 10px;
+}
+
+nav ul {
+   padding: 0;
+   list-style: none;
+   display: flex;
+   justify-content: center;
+}
+
+nav li {
+   padding: 10px 0;
+}
+
+nav a {
+   text-decoration: none;
+   padding: 10px;
+}

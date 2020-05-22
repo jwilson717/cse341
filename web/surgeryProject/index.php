@@ -12,10 +12,18 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Surgery List</title>
    <link rel='stylesheet' type='text/css' href='css/bootstrap.min.css'>
+   <link rel='stylesheet' type='text/css' href='css/styles.css'>
 </head>
 <body>
-   <header class='container justify-content-center'>
-      <h2 class='col-10'>Surgery List</h2>
+   <header>
+      <h2 id='pagetitle'>Surgery List</h2>
    </header>
+   <nav>
+      <ul>
+         <li><a href="index.php">List</a></li>
+         <li><a href="search.php">Search</a></li>
+         <li><a href="insert.php">Data Entry</a></li>
+      </ul>
+   </nav>
 </body>
 </html>
