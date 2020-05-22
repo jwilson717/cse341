@@ -54,7 +54,7 @@
          $stmt = $db->query('SELECT * FROM Surgery s JOIN Patient p on s.patient_id = p.record_num');
          $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
          foreach ($rows as $row=>$r) {
-            echo $r['surgery_id'];
+            echo $r['surgery_id'] . '\n';
          }
       ?>
    </main>
