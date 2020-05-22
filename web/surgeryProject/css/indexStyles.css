@@ -5,3 +5,8 @@
 .item:hover {
    box-shadow: 3px 3px 3px 3px black;
 }
+
+a {
+   color: black;
+   text-decoration: none;
+}
