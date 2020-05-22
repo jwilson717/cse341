@@ -6,6 +6,10 @@ body {
    padding: 10px;
 }
 
+hr {
+   margin: 0;
+}
+
 nav ul {
    padding: 0;
    list-style: none;
@@ -26,4 +30,8 @@ nav a {
 nav a:hover {
    color: gray;
    background-color: white;
+}
+
+main {
+   background-color: lightgray;
 }

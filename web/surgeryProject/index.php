@@ -18,6 +18,7 @@
    <header>
       <h2 id='pagetitle'>Surgery List</h2>
    </header>
+   <hr>
    <nav>
       <ul>
          <li><a href="index.php">List</a></li>
@@ -25,5 +26,8 @@
          <li><a href="insert.php">Data Entry</a></li>
       </ul>
    </nav>
+   <main>
+      
+   </main>
 </body>
 </html>
