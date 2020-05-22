@@ -30,7 +30,7 @@
          // $statement = $db->prepare('SELECT * FROM system_user WHERE username=:username AND password=:password');
          // $statement->bindValue(':username', $username, PDO::PARAM_STR);
          // $statement->bindValue(':password', $passwd, PDO::PARAM_STR);
-         $statement->execute([':username'] => $username);
+         $statement->execute([':username' => $username]);
          $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 
          if(count($results) > 0) {
