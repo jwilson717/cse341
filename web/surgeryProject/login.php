@@ -32,6 +32,8 @@
 
          if(count($results) > 0) {
             header('Location: index.php');
+         } else {
+            $error = 'Incorrect username or password.';
          }
       }
 ?>
@@ -49,6 +51,11 @@
       <div class='row justify-content-center h75'>
          <div class='col-6 text-center align-self-center border border-light rounded-lg p-4'>
             <h2>Please Sign In</h2>
+            <?php
+               if(isset($error)){
+                  echo "<p style='color: red;'> $error </p>";
+               }
+            ?>
             <form action="login.php" method="post">
                <label for="username">Username</label>
                <input type="text" name="username" id="username" required><br>
