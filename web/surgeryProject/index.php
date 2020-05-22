@@ -5,10 +5,28 @@
      header('Location: login.php');
    }
 
-   require dbconnect.php;
-
-   $stmt = $db->query('SELECT * FROM system_user');
-   echo $stmt;
+   $db = null;
+   try
+      {
+        $dbUrl = getenv('DATABASE_URL');
+      
+        $dbOpts = parse_url($dbUrl);
+      
+        $dbHost = $dbOpts["host"];
+        $dbPort = $dbOpts["port"];
+        $dbUser = $dbOpts["user"];
+        $dbPassword = $dbOpts["pass"];
+        $dbName = ltrim($dbOpts["path"],'/');
+      
+        $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+      
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      }
+      catch (PDOException $ex)
+      {
+        echo 'Error!: ' . $ex->getMessage();
+        die();
+      }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,7 +50,14 @@
       </ul>
    </nav>
    <main>
+      <?php 
+         $stmt = $db->query('SELECT * FROM Surgery s JOIN Patient p on s.surgery_id = p.record_num');
+         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+         foreach ($rows as $r) {
+            echo $r['surgery_id'];
+         }
+      ?>
    </main>
    <footer>
       <p>&copy; Jaden Wilson 2020 (CSE 341 BYUI)</p>
