@@ -14,6 +14,6 @@
    <link rel='stylesheet' type='text/css' href='css/bootstrap.min.css'>
 </head>
 <body>
-   
+   <h2 class='col-10'>Surgery List</h2>
 </body>
 </html>
