@@ -32,6 +32,7 @@
 
          if(count($results) > 0) {
             header('Location: index.php');
+            $_SESSION['loggedin'] = True;
          } else {
             $error = 'Incorrect username or password.';
          }
