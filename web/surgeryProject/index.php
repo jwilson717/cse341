@@ -53,9 +53,9 @@
       <?php 
          $stmt = $db->query('SELECT * FROM Surgery s JOIN Patient p on s.patient_id = p.record_num');
          $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-         print_r($rows);
          foreach ($rows as $row=>$r) {
-            echo "<div> <h2>" . $r['f_name'] . $r['l_name'] . "</h2>";
+            echo "<div class='border border-dark'> <h2>" . $r['f_name'] . ' ' . $r['l_name'] . "</h2>";
+            echo "<p>" . $r['surgery_date'] . " " . $r['Procedure'] . "</p></div>";
          }
       ?>
    </main>
