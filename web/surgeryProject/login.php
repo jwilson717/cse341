@@ -26,16 +26,12 @@
       if(isset($_POST['username']) && isset($_POST['passwd'])){
          $username = htmlspecialchars($_POST['username']);
          $passwd = htmlspecialchars($_POST['passwd']);
-         $statement = $db->prepare('SELECT * FROM system_user WHERE system_username = ?');
-         // $statement = $db->prepare('SELECT * FROM system_user WHERE username=:username AND password=:password');
-         // $statement->bindValue(':username', $username, PDO::PARAM_STR);
-         // $statement->bindValue(':password', $passwd, PDO::PARAM_STR);
-         $statement->execute([$username]);
+         $statement = $db->prepare('SELECT * FROM system_user WHERE system_username = ? AND password = ?');
+         $statement->execute([$username, $passwd]);
          $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 
          if(count($results) > 0) {
-            // header('index.php');
-            echo 'Success';
+            header('index.php');
          }
       }
 ?>
