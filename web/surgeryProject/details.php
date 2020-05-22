@@ -59,8 +59,7 @@
       <h2>Surgery Details</h2>
       <?php
          $stmt = $db->prepare('SELECT * FROM Surgery s JOIN Patient p ON s.patient_id = p.record_num JOIN Insurance i on p.insurance_id = i.insurance_id JOIN Pathology_connect pc ON s.surgery_id = pc.surgery_id JOIN pathology pa ON pc.pathology_id = pa.pathology_id WHERE surgery_id = :record');
-         $stmt->bindValue(':record'. $record, PDO::PARAM_STR);
-         $stmt->execute();
+         $stmt->execute(['record'=>$record]);
          $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
          print_r($rows);
       ?>
