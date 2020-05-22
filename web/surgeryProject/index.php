@@ -27,7 +27,10 @@
       </ul>
    </nav>
    <main>
-      
+
    </main>
+   <footer>
+      <p>&copy; Jaden Wilson 2020 (CSE 341 BYUI)</p>
+   </footer>
 </body>
 </html>
