@@ -4,6 +4,35 @@
    if(!isset($_SESSION['loggedin'])){
      header('Location: login.php');
    }
+
+   if (isset($_GET['record'])) {
+      $record = $_GET['record'];
+   } else {
+      $record = '';
+   }
+
+   $db = null;
+   try
+      {
+        $dbUrl = getenv('DATABASE_URL');
+      
+        $dbOpts = parse_url($dbUrl);
+      
+        $dbHost = $dbOpts["host"];
+        $dbPort = $dbOpts["port"];
+        $dbUser = $dbOpts["user"];
+        $dbPassword = $dbOpts["pass"];
+        $dbName = ltrim($dbOpts["path"],'/');
+      
+        $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+      
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      }
+      catch (PDOException $ex)
+      {
+        echo 'Error!: ' . $ex->getMessage();
+        die();
+      }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +45,7 @@
 </head>
 <body>
    <header>
-      <h2 id='pagetitle'>Surgery Details</h2>
+      <h2 id='pagetitle'>Surgery List</h2>
    </header>
    <hr>
    <nav>
@@ -27,8 +56,11 @@
       </ul>
    </nav>
    <main>
+      <h2>Surgery Details</h2>
       <?php
-         echo $_GET['record'];
+         $stmt = $db->query('SELECT * FROM Surgery s JOIN Patient p ON s.patient_id = p.record_num JOIN Insurance i on p.insurance_id = i.insurance_id JOIN Pathology_connect pc ON s.surgery_id = pc.surgery_id JOIN pathology p ON pc.pathology_id = p.pathology_id');
+         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+         print_r($rows);
       ?>
    </main>
    <footer>
