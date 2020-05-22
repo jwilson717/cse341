@@ -31,7 +31,7 @@
          $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 
          if(count($results) > 0) {
-            header('index.php');
+            header('Location: index.php');
          }
       }
 ?>
