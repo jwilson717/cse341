@@ -4,6 +4,11 @@
    if(!isset($_SESSION['loggedin'])){
      header('Location: login.php');
    }
+
+   require dbconnect.php;
+
+   $stmt = $db->query('SELECT * FROM system_user');
+   echo $stmt;
 ?>
 <!DOCTYPE html>
 <html lang="en">
