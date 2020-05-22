@@ -16,4 +16,10 @@ nav li {
 nav a {
    text-decoration: none;
    padding: 10px;
+   color: black;
+}
+
+nav a:hover {
+   color: gray;
+   background-color: white;
 }
