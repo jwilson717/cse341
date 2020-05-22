@@ -27,7 +27,9 @@
       </ul>
    </nav>
    <main>
-      
+      <?php
+         echo $_GET['record'];
+      ?>
    </main>
    <footer>
       <p>&copy; Jaden Wilson 2020 (CSE 341 BYUI)</p>
