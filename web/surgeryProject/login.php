@@ -26,7 +26,7 @@
       if(isset($_POST['username']) && isset($_POST['passwd'])){
          $username = htmlspecialchars($_POST['username']);
          $passwd = htmlspecialchars($_POST['passwd']);
-         $statement = $db->prepare('SELECT * FROM system_user WHERE username = ?');
+         $statement = $db->prepare('SELECT * FROM system_user WHERE system_username = ?');
          // $statement = $db->prepare('SELECT * FROM system_user WHERE username=:username AND password=:password');
          // $statement->bindValue(':username', $username, PDO::PARAM_STR);
          // $statement->bindValue(':password', $passwd, PDO::PARAM_STR);
