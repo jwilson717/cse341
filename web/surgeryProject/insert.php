@@ -27,7 +27,7 @@
       </ul>
    </nav>
    <main>
-      
+      <h2>Page Under Development</h2>
    </main>
    <footer>
       <p>&copy; Jaden Wilson 2020 (CSE 341 BYUI)</p>
