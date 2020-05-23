@@ -30,9 +30,9 @@
    }
 
    if(isset($_POST['recordnum'])) {
-      $recordnum = htmlspecialchars($_POST['recordnum']);
+      $recordnum = $_POST['recordnum'];
    } else {
-      $recordnum = '';
+      $recordnum = 0;
    }
 
    $db = null;
@@ -98,7 +98,7 @@
       <?php 
          if(isset($surgeryDate) && isset($procedure) && isset($fname) && isset($lname) && isset($recordnum)) {
             $stmt = $db->prepare('SELECT * FROM Surgery s JOIN Patient p on s.patient_id = p.record_num 
-            WHERE s.surgery_date like ? AND s.procedure like ? AND p.f_name like ? AND p.l_name like ? AND p.record_num like ?');
+            WHERE s.surgery_date like ? AND s.procedure like ? AND p.f_name like ? AND p.l_name like ? OR p.record_num = ?');
             $stmt->execute(["%$surgeryDate&", "%$procedure%", "%$fname%", "%$lname%", "%$recordnum%"]);
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
             foreach ($rows as $row=>$r) {
