@@ -30,7 +30,7 @@
    <main>
       <form>
          <label for="surgeryDate">Surgery Date: </label>
-         <input type="text" id='surgeryDate' name='surgeryDate' require><br> <span class='hide' id='error1'>Surgery date is required</span>
+         <input type="text" id='surgeryDate' name='surgeryDate' require> <span class='hide' id='error1'>Surgery date is required</span><br>
          <label for="patientfname">First Name: </label>
          <input type="text" name="patientfname" id="patientfname"><br>
          <label for="patientlname">Last Name: </label>
