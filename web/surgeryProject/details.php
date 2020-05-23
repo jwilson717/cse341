@@ -62,6 +62,12 @@
          $stmt->execute([$record]);
          $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
          print_r($rows);
+
+         foreach ($rows as $row=>$r) {
+            foreach ($r as $i=>$d) {
+               echo "<p> $i: $d";
+            }
+         }
       ?>
    </main>
    <footer>
