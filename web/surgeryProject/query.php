@@ -1,5 +1,4 @@
 <?php
-echo 'wtf';
    session_start();
    echo 'Test 1';
    if(!isset($_SESSION['loggedin'])){
@@ -57,16 +56,5 @@ echo 'wtf';
             echo "<a href='details.php?record=$id'><div class='border border-dark m-2 p-2 item'> <h2>" . $r['f_name'] . ' ' . $r['l_name'] . "</h2>";
             echo "<p class='ml-3'>" . $r['surgery_date'] . " " . $r['procedure'] . "</p></div></a>";
          }
-      } else {
-         echo 'Test 7';
-         $stmt = $db->prepare('SELECT * FROM Surgery s JOIN Patient p on s.patient_id = p.record_num 
-         WHERE p.f_name like ? OR p.l_name like ?');
-         $stmt->execute([$fname, $lname]);
-         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-         foreach ($rows as $row=>$r) {
-            $id = $r['surgery_id'];
-            echo "<a href='details.php?record=$id'><div class='border border-dark m-2 p-2 item'> <h2>" . $r['f_name'] . ' ' . $r['l_name'] . "</h2>";
-            echo "<p class='ml-3'>" . $r['surgery_date'] . " " . $r['procedure'] . "</p></div></a>";
-         }
-      }
+      } 
 ?>
