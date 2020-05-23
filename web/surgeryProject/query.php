@@ -57,6 +57,7 @@
             echo "<p class='ml-3'>" . $r['surgery_date'] . " " . $r['procedure'] . "</p></div></a>";
          }
       } else {
+         echo $surgeryDate;
          $stmt = $db->prepare('SELECT * FROM Surgery s JOIN Patient p on s.patient_id = p.record_num 
          WHERE p.f_name like ? OR p.l_name like ?');
          $stmt->execute([$fname, $lname]);
