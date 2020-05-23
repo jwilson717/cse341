@@ -7,23 +7,34 @@
 
    if(isset($_POST['surgeryDate'])) {
       $surgeryDate = htmlspecialchars($_POST['surgeryDate']);
+   } else {
+      $surgeryDate = '';
    }
 
    if(isset($_POST['procedure'])){
       $procedure = htmlspecialchars($_POST['procedure']);
+   } else {
+      $procedure = '';
    }
 
    if(isset($_POST['patientfname'])){
       $fname = htmlspecialchars($_POST['patientfname']);
+   } else {
+      $fname = '';
    }
 
    if (isset($_POST['patientlname'])) {
       $lname = htmlspecialchars($_POST['patientlname']);
+   } else {
+      $lname = '';
    }
 
    if(isset($_POST['recordnum'])) {
       $recordnum = htmlspecialchars($_POST['recordnum']);
+   } else {
+      $recordnum = '';
    }
+
    $db = null;
    try
       {
@@ -55,6 +66,7 @@
    <title>Search</title>
    <link rel='stylesheet' type='text/css' href='css/bootstrap.min.css'>
    <link rel='stylesheet' type='text/css' href='css/styles.css'>
+   <link rel='stylesheet' type='text/css' href='css/indexStyles.css'>
 </head>
 <body>
    <header>
@@ -86,7 +98,7 @@
       <?php 
          if(isset($surgeryDate) && isset($procedure) && isset($fname) && isset($lname) && isset($recordnum)) {
             $stmt = $db->prepare('SELECT * FROM Surgery s JOIN Patient p on s.patient_id = p.record_num 
-            WHERE s.surgery_date = ? AND s.procedure = ? AND p.f_name = ? AND p.l_name = ? AND p.record_num = ?');
+            WHERE s.surgery_date = ? OR s.procedure = ? OR p.f_name = ? OR p.l_name = ? OR p.record_num = ?');
             $stmt->execute([$surgeryDate, $procedure, $fname, $lname, $recordnum]);
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
             foreach ($rows as $row=>$r) {
