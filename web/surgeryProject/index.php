@@ -2,7 +2,8 @@
    session_start();
 
    if(!isset($_SESSION['loggedin'])){
-     header('Location: login.php');
+      $_SESSION['returnpage'] = 'index.php';
+      header('Location: login.php');
    }
 
    $db = null;
