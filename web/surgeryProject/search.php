@@ -8,7 +8,7 @@
    if(isset($_POST['surgeryDate'])) {
       $surgeryDate = htmlspecialchars($_POST['surgeryDate']);
    } else {
-      $surgeryDate = '0000-0-00';
+      $surgeryDate = '';
    }
 
    if(isset($_POST['patientfname'])){
@@ -80,7 +80,7 @@
 
       </form>
       <?php 
-         if(isset($surgeryDate) && isset($procedure) && isset($fname) && isset($lname) && isset($recordnum)) {
+         if(isset($surgeryDate) && isset($fname) && isset($lname)) {
             $stmt = $db->prepare('SELECT * FROM Surgery s JOIN Patient p on s.patient_id = p.record_num 
             WHERE s.surgery_date = ?  AND p.f_name = ? AND p.l_name = ?');
             $stmt->execute([$surgeryDate, $fname, $lname]);
