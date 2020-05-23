@@ -61,7 +61,7 @@
          $stmt = $db->prepare('SELECT * FROM Surgery s JOIN Patient p ON s.patient_id = p.record_num JOIN Insurance i on p.insurance_id = i.insurance_id LEFT JOIN Pathology_connect pc ON s.surgery_id = pc.surgery_id LEFT JOIN pathology pa ON pc.pathology_id = pa.pathology_id WHERE s.surgery_id = ?');
          $stmt->execute([$record]);
          $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-         print_r($rows);
+         // print_r($rows);
          
          foreach ($rows as $row=>$r) {
             echo "<p>Procedure: " . $r['procedure'] . "</p>";
@@ -70,7 +70,7 @@
             echo "<p>Blood Loss: " . $r['blood_loss'] . "</p>";
             echo "<p>Specimen Weight: " . $r['specimen_weight'] . "</p>";
             echo "<p>Pathology: " . $r['pathology'] . "</p>";
-            echo "<h2>Patient Info</p>";
+            echo "<h2>Patient Info</h2>";
             echo "<p>Name: " . $r['f_name'] . " " . $r['l_name'] .  "</p>";
             echo "<p>Record Number: " . $r['record_num'] . "</p>";
             echo "<p>Age: " . $r['age'] . "</p>";
