@@ -8,19 +8,19 @@
    if(isset($_POST['surgeryDate'])) {
       $surgeryDate = htmlspecialchars($_POST['surgeryDate']);
    } else {
-      $surgeryDate = '';
+      $surgeryDate = '0000-00-00';
    }
 
    if(isset($_POST['patientfname'])){
       $fname = htmlspecialchars($_POST['patientfname']);
    } else {
-      $fname = '';
+      $fname = 'error';
    }
 
    if (isset($_POST['patientlname'])) {
       $lname = htmlspecialchars($_POST['patientlname']);
    } else {
-      $lname = '';
+      $lname = 'error';
    }
 
    $db = null;
@@ -71,7 +71,7 @@
    <main>
       <form action="search.php" method='post'>
          <label for="surgeryDate">Surgery Date: </label>
-         <input type="text" id='surgeryDate' name='surgeryDate' ><br>
+         <input type="text" id='surgeryDate' name='surgeryDate'><br>
          <label for="patientfname">First Name: </label>
          <input type="text" name="patientfname" id="patientfname"><br>
          <label for="patientlname">Last Name: </label>
@@ -82,8 +82,8 @@
       <?php 
          if(isset($surgeryDate) && isset($fname) && isset($lname)) {
             $stmt = $db->prepare('SELECT * FROM Surgery s JOIN Patient p on s.patient_id = p.record_num 
-            WHERE s.surgery_date = ?  AND p.f_name like ? AND p.l_name = ?');
-            $stmt->execute([$surgeryDate, $fname, $lname]);
+            WHERE s.surgery_date = ?  AND p.f_name like ? AND p.l_name like ?');
+            $stmt->execute([$surgeryDate, "%$fname%", "%$lname%"]);
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
             foreach ($rows as $row=>$r) {
                $id = $r['surgery_id'];
