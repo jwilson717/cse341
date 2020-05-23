@@ -12,13 +12,13 @@
    }
 
    if(isset($_POST['patientfname'])){
-      $fname = htmlspecialchars($_POST['patientfname']);
+      $fname = '%' . htmlspecialchars($_POST['patientfname']) . '%';
    } else {
       $fname = 'error';
    }
 
    if (isset($_POST['patientlname'])) {
-      $lname = htmlspecialchars($_POST['patientlname']);
+      $lname = '%' . htmlspecialchars($_POST['patientlname']) . '%';
    } else {
       $lname = 'error';
    }
@@ -83,7 +83,7 @@
          if(isset($surgeryDate) && isset($fname) && isset($lname)) {
             $stmt = $db->prepare('SELECT * FROM Surgery s JOIN Patient p on s.patient_id = p.record_num 
             WHERE s.surgery_date = ?  AND p.f_name like ? AND p.l_name = ?');
-            $stmt->execute([$surgeryDate, "%$fname%", "%$lname%"]);
+            $stmt->execute([$surgeryDate, $fname, $lname]);
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
             foreach ($rows as $row=>$r) {
                $id = $r['surgery_id'];
