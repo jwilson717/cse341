@@ -61,7 +61,7 @@
          $stmt = $db->prepare('SELECT * FROM Surgery s JOIN Patient p ON s.patient_id = p.record_num JOIN Insurance i on p.insurance_id = i.insurance_id LEFT JOIN Pathology_connect pc ON s.surgery_id = pc.surgery_id LEFT JOIN pathology pa ON pc.pathology_id = pa.pathology_id WHERE s.surgery_id = ?');
          $stmt->execute([$record]);
          $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-         
+         print_r($rows);
       ?>
    </main>
    <footer>
