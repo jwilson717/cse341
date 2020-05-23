@@ -72,9 +72,9 @@
       <form action="search.php" method='post'>
          <label for="surgeryDate">Surgery Date: </label>
          <input type="text" id='surgeryDate' name='surgeryDate'><br>
-         <label for="procedure">Procedure Type: </label>
+         <label for="patientfname">First Name: </label>
          <input type="text" name="patientfname" id="patientfname"><br>
-         <label for="patientlname">Patient Name: </label>
+         <label for="patientlname">Last Name: </label>
          <input type="text" name="patientlname" id="patientlname"><br>
          <input type="submit" name="search" id="search" value='search'>
 
