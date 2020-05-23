@@ -71,7 +71,7 @@
    <main>
       <form action="search.php" method='post'>
          <label for="surgeryDate">Surgery Date: </label>
-         <input type="text" id='surgeryDate' name='surgeryDate'><br>
+         <input type="text" id='surgeryDate' name='surgeryDate' required><br>
          <label for="patientfname">First Name: </label>
          <input type="text" name="patientfname" id="patientfname"><br>
          <label for="patientlname">Last Name: </label>
@@ -90,17 +90,7 @@
                echo "<a href='details.php?record=$id'><div class='border border-dark m-2 p-2 item'> <h2>" . $r['f_name'] . ' ' . $r['l_name'] . "</h2>";
                echo "<p class='ml-3'>" . $r['surgery_date'] . " " . $r['procedure'] . "</p></div></a>";
             }
-         } else {
-            $stmt = $db->prepare('SELECT * FROM Surgery s JOIN Patient p on s.patient_id = p.record_num 
-            WHERE p.f_name like ? OR p.l_name like ?');
-            $stmt->execute(["%$fname%", "%$lname%"]);
-            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            foreach ($rows as $row=>$r) {
-               $id = $r['surgery_id'];
-               echo "<a href='details.php?record=$id'><div class='border border-dark m-2 p-2 item'> <h2>" . $r['f_name'] . ' ' . $r['l_name'] . "</h2>";
-               echo "<p class='ml-3'>" . $r['surgery_date'] . " " . $r['procedure'] . "</p></div></a>";
-            }
-         }
+         } 
          
       ?>
    </main>
