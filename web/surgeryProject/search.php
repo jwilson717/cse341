@@ -90,7 +90,7 @@
             }
          } else {
             $stmt = $db->prepare('SELECT * FROM Surgery s JOIN Patient p on s.patient_id = p.record_num 
-            WHERE p.f_name like ? AND p.l_name like ?');
+            WHERE p.f_name like ? OR p.l_name like ?');
             $stmt->execute(["%$fname%", "%$lname%"]);
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
             print_r($rows);
