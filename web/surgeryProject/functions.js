@@ -1,9 +1,13 @@
 $(document).ready(function () {
    $('#search').click(function() {
-      console.log('Test');
-      $.post('query.php', $('form').serialize(), function(data) {
-         console.log('Test2');
-         $('#out').html(data);
-      });
+      if (!$('#surgeryDate').val()) {
+         $('#error1').removeClass('hide');
+         $('#error').css('color', 'red');
+      } else {
+         $('#error1').addClass('hide');
+         $.post('query.php', $('form').serialize(), function(data) {
+            $('#out').html(data);
+         });
+      }
    });
 });
