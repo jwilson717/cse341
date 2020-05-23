@@ -12,13 +12,13 @@
    if(isset($_POST['patientfname'])){
       $fname = htmlspecialchars($_POST['patientfname']);
    } else {
-      $fname = 'error';
+      $fname = ' ';
    }
 
    if (isset($_POST['patientlname'])) {
       $lname = htmlspecialchars($_POST['patientlname']);
    } else {
-      $lname = 'error';
+      $lname = ' ';
    }
 
    $db = null;
