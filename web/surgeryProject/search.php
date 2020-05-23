@@ -32,7 +32,7 @@
          <label for="surgeryDate">Surgery Date: </label>
          <input type="text" id='surgeryDate' name='surgeryDate' require><br>
          <label for="patientfname">First Name: </label>
-         <input type="text" name="patientfname" id="patientfname" require><br>
+         <input type="text" name="patientfname" id="patientfname"><br>
          <label for="patientlname">Last Name: </label>
          <input type="text" name="patientlname" id="patientlname"><br>
          <Button type="button" name="search" id="search" class='btn btn-secondary'>Search</button>
