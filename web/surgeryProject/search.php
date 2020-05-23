@@ -5,23 +5,23 @@
      header('Location: login.php');
    }
 
-   if(isset($_POST['surgeryDate'])) {
-      $surgeryDate = htmlspecialchars($_POST['surgeryDate']);
-   } else {
-      $surgeryDate = '0000-00-00';
-   }
+   // if(isset($_POST['surgeryDate'])) {
+   //    $surgeryDate = htmlspecialchars($_POST['surgeryDate']);
+   // } else {
+   //    $surgeryDate = '0000-00-00';
+   // }
 
-   if(isset($_POST['patientfname'])){
-      $fname = htmlspecialchars($_POST['patientfname']);
-   } else {
-      $fname = ' ';
-   }
+   // if(isset($_POST['patientfname'])){
+   //    $fname = htmlspecialchars($_POST['patientfname']);
+   // } else {
+   //    $fname = ' ';
+   // }
 
-   if (isset($_POST['patientlname'])) {
-      $lname = htmlspecialchars($_POST['patientlname']);
-   } else {
-      $lname = ' ';
-   }
+   // if (isset($_POST['patientlname'])) {
+   //    $lname = htmlspecialchars($_POST['patientlname']);
+   // } else {
+   //    $lname = ' ';
+   // }
 
    $db = null;
    try
@@ -69,17 +69,17 @@
       </ul>
    </nav>
    <main>
-      <form action="search.php" method='post'>
+      <form>
          <label for="surgeryDate">Surgery Date: </label>
          <input type="text" id='surgeryDate' name='surgeryDate' required><br>
          <label for="patientfname">First Name: </label>
          <input type="text" name="patientfname" id="patientfname"><br>
          <label for="patientlname">Last Name: </label>
          <input type="text" name="patientlname" id="patientlname"><br>
-         <input type="submit" name="search" id="search" value='search'>
-
+         <Button type="button" name="search" id="search" class='btn btn-secondary'>Search</button>
       </form>
-      <?php 
+      <div id='out'></div>
+      <!-- <?php 
          if($surgeryDate != '0000-00-00') {
             $stmt = $db->prepare('SELECT * FROM Surgery s JOIN Patient p on s.patient_id = p.record_num 
             WHERE s.surgery_date = ?  AND p.f_name like ? AND p.l_name like ?');
@@ -92,10 +92,12 @@
             }
          } 
          
-      ?>
+      ?> -->
    </main>
    <footer>
       <p>&copy; Jaden Wilson 2020 (CSE 341 BYUI)</p>
    </footer>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script src='functions.js'></script>
 </body>
 </html>
