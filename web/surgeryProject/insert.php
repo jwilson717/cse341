@@ -2,7 +2,8 @@
    session_start();
 
    if(!isset($_SESSION['loggedin'])){
-     header('Location: login.php');
+      $_SESSION['returnpage'] = 'insert.php';
+      header('Location: login.php');
    }
 ?>
 <!DOCTYPE html>
