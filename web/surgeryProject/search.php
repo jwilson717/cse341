@@ -8,19 +8,19 @@
    if(isset($_POST['surgeryDate'])) {
       $surgeryDate = htmlspecialchars($_POST['surgeryDate']);
    } else {
-      $surgeryDate = '0000-0-00';
+      $surgeryDate = '';
    }
 
    if(isset($_POST['patientfname'])){
-      $fname = '%' . htmlspecialchars($_POST['patientfname']) . '%';
+      $fname = htmlspecialchars($_POST['patientfname']);
    } else {
-      $fname = 'error';
+      $fname = '';
    }
 
    if (isset($_POST['patientlname'])) {
-      $lname = '%' . htmlspecialchars($_POST['patientlname']) . '%';
+      $lname = htmlspecialchars($_POST['patientlname']);
    } else {
-      $lname = 'error';
+      $lname = '';
    }
 
    $db = null;
@@ -71,7 +71,7 @@
    <main>
       <form action="search.php" method='post'>
          <label for="surgeryDate">Surgery Date: </label>
-         <input type="text" id='surgeryDate' name='surgeryDate'><br>
+         <input type="text" id='surgeryDate' name='surgeryDate' ><br>
          <label for="patientfname">First Name: </label>
          <input type="text" name="patientfname" id="patientfname"><br>
          <label for="patientlname">Last Name: </label>
