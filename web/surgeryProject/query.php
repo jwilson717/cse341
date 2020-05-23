@@ -1,4 +1,5 @@
 <?php
+echo 'wtf';
    session_start();
    echo 'Test 1';
    if(!isset($_SESSION['loggedin'])){
@@ -45,7 +46,7 @@
       echo 'Error!: ' . $ex->getMessage();
       die();
       }
-      echo $surgeryDate . "test 6";
+      echo "Test 6";
       if($surgeryDate != '0000-00-00') {
          $stmt = $db->prepare('SELECT * FROM Surgery s JOIN Patient p on s.patient_id = p.record_num 
          WHERE s.surgery_date = ?  AND p.f_name like ? AND p.l_name like ?');
