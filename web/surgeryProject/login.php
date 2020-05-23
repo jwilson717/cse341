@@ -40,8 +40,13 @@
          $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 
          if(count($results) > 0) {
-            header('Location: index.php');
             $_SESSION['loggedin'] = True;
+            if (isset($_SESSION['returnpage'])) {
+               $returnpage = $_SESSION['returnpage'];
+               header("Location: $returnpage");
+            } else {
+               header('Location: index.php');
+            }
          } else {
             $error = 'Incorrect username or password.';
          }
