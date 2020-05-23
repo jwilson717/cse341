@@ -52,7 +52,7 @@
    </nav>
    <main>
       <?php 
-         $stmt = $db->query('SELECT * FROM Surgery s JOIN Patient p on s.patient_id = p.record_num');
+         $stmt = $db->query('SELECT * FROM Surgery s JOIN Patient p on s.patient_id = p.record_num ORDER BY s.surgery_date');
          $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
          foreach ($rows as $row=>$r) {
             $id = $r['surgery_id'];
