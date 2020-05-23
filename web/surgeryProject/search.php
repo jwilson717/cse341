@@ -11,12 +11,6 @@
       $surgeryDate = '0000-0-00';
    }
 
-   if(isset($_POST['procedure'])){
-      $procedure = htmlspecialchars($_POST['procedure']);
-   } else {
-      $procedure = '';
-   }
-
    if(isset($_POST['patientfname'])){
       $fname = htmlspecialchars($_POST['patientfname']);
    } else {
@@ -27,12 +21,6 @@
       $lname = htmlspecialchars($_POST['patientlname']);
    } else {
       $lname = '';
-   }
-
-   if(isset($_POST['recordnum'])) {
-      $recordnum = $_POST['recordnum'];
-   } else {
-      $recordnum = 0;
    }
 
    $db = null;
@@ -85,21 +73,17 @@
          <label for="surgeryDate">Surgery Date: </label>
          <input type="text" id='surgeryDate' name='surgeryDate'><br>
          <label for="procedure">Procedure Type: </label>
-         <input type="text" name="procedure" id="procedure"><br>
-         <label for="patientfname">Patient Name: </label>
          <input type="text" name="patientfname" id="patientfname"><br>
          <label for="patientlname">Patient Name: </label>
          <input type="text" name="patientlname" id="patientlname"><br>
-         <label for="recordnum">Record Number: </label>
-         <input type="text" id='recordnum' name='recordnum'><br>
          <input type="submit" name="search" id="search" value='search'>
 
       </form>
       <?php 
          if(isset($surgeryDate) && isset($procedure) && isset($fname) && isset($lname) && isset($recordnum)) {
             $stmt = $db->prepare('SELECT * FROM Surgery s JOIN Patient p on s.patient_id = p.record_num 
-            WHERE s.surgery_date = ? OR s.procedure like ? AND p.f_name like ? AND p.l_name like ? OR p.record_num = ?');
-            $stmt->execute([$surgeryDate, "%$procedure%", "%$fname%", "%$lname%", $recordnum]);
+            WHERE s.surgery_date = ?  AND p.f_name like ? AND p.l_name like ?');
+            $stmt->execute([$surgeryDate, "%$fname%", "%$lname%"]);
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
             foreach ($rows as $row=>$r) {
                $id = $r['surgery_id'];
