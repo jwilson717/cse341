@@ -1,28 +1,28 @@
 <?php
    session_start();
-   echo 'Test 1';
+   
    if(!isset($_SESSION['loggedin'])){
    header('Location: login.php');
    }
-   echo 'Test 2';
+   
    if(isset($_POST['surgeryDate'])) {
       $surgeryDate = htmlspecialchars($_POST['surgeryDate']);
    } else {
       $surgeryDate = '0000-00-00';
    }
-   echo 'Test 3';
+   
    if(isset($_POST['patientfname'])){
       $fname = '%' . htmlspecialchars($_POST['patientfname']) . '%';
    } else {
       $fname = '% %';
    }
-   echo 'Test 4';
+   
    if (isset($_POST['patientlname'])) {
       $lname = '%' . htmlspecialchars($_POST['patientlname']) . '%';
    } else {
       $lname = '% %';
    }
-   echo 'Test 5';
+
    $db = null;
    try
       {
@@ -45,7 +45,7 @@
       echo 'Error!: ' . $ex->getMessage();
       die();
       }
-      echo "Test 6";
+
       if($surgeryDate != '0000-00-00') {
          $stmt = $db->prepare('SELECT * FROM Surgery s JOIN Patient p on s.patient_id = p.record_num 
          WHERE s.surgery_date = ?  AND p.f_name like ? AND p.l_name like ?');
