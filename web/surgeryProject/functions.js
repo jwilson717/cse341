@@ -1,8 +1,8 @@
 $(document).ready(function () {
    $('#search').click(function() {
       console.log('Test');
-      $('form').reportValidity();
       $.post('query.php', $('form').serialize(), function(data) {
+         console.log('Test2');
          $('#out').html(data);
       });
    });
