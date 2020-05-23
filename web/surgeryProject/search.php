@@ -31,7 +31,7 @@
    <main>
       <form>
          <label for="surgeryDate">Surgery Date: </label>
-         <input type="text" id='surgeryDate' name='surgeryDate' pleaceholder='YYYY-M-DD' require> <span class='hide' id='error1'>Surgery date is required</span><br>
+         <input type="text" id='surgeryDate' name='surgeryDate' placeholder='YYYY-M-DD' require> <span class='hide' id='error1'>Surgery date is required</span><br>
          <label for="patientfname">First Name: </label>
          <input type="text" name="patientfname" id="patientfname"><br>
          <label for="patientlname">Last Name: </label>
