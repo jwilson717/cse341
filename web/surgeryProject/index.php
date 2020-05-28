@@ -4,6 +4,7 @@
    if(!isset($_SESSION['loggedin'])){
       $_SESSION['returnpage'] = 'index.php';
       header('Location: login.php');
+      die();
    }
 
    $db = null;

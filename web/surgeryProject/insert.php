@@ -4,6 +4,7 @@
    if(!isset($_SESSION['loggedin'])){
       $_SESSION['returnpage'] = 'insert.php';
       header('Location: login.php');
+      die();
    }
 ?>
 <!DOCTYPE html>
@@ -28,10 +29,27 @@
       </ul>
    </nav>
    <main>
-      <h2>Page Under Development</h2>
+      <div class='container container-fluid'>
+         <div class='row'>
+            <div class='col-6'>
+               <input type="checkbox" id='surgery'>
+               <form action="data.php" method='post' id='surgeryData'>
+                  test
+               </form>
+            </div>
+            <div class='col-6'>
+               <input type="checkbox" id='patient'>     
+               <form action="data.php" action='post' id='patientData'>
+               test
+               </form>
+            </div>
+         </div>
+      </div>
    </main>
    <footer>
       <p>&copy; Jaden Wilson 2020 (CSE 341 BYUI)</p>
    </footer>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script src='functions.js'></script>
 </body>
 </html>
