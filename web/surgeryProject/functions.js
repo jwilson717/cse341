@@ -13,9 +13,9 @@ $(document).ready(function () {
 
    $('#surgerycheck').change(function() {
       if ($('#surgerycheck').is(':checked')) {
-         $('#surgeryData').removeClass('hide');
+         $('.surg').removeClass('hide');
       } else {
-         $('#surgeryData').addClass('hide');
+         $('.surg').addClass('hide');
       }
    });
 
