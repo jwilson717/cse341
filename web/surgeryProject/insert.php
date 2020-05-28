@@ -6,6 +6,30 @@
       header('Location: login.php');
       die();
    }
+
+   $db = null;
+   try
+      {
+      $dbUrl = getenv('DATABASE_URL');
+      
+      $dbOpts = parse_url($dbUrl);
+      
+      $dbHost = $dbOpts["host"];
+      $dbPort = $dbOpts["port"];
+      $dbUser = $dbOpts["user"];
+      $dbPassword = $dbOpts["pass"];
+      $dbName = ltrim($dbOpts["path"],'/');
+      
+      $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+      
+      $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      }
+      catch (PDOException $ex)
+      {
+      echo 'Error!: ' . $ex->getMessage();
+      die();
+      }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,13 +57,41 @@
       <div class='container container-fluid'>
          <div class='row'>
             <div class='col-6'>
-               <input type="checkbox" id='surgerycheck'>
+               <input type="checkbox" id='surgerycheck' value='New Surgery'>
                <form action="data.php" method='post' id='surgeryData' class='hide'>
-                  test
+                  <label for="f_name">Patient First Name: </label>
+                  <input type="text" name='f_name' id='f_name'><br>
+                  <label for="l_name">Patient Last Name: </label>
+                  <input type="text" name='l_name' id='l_name'><br>
+                  <label for="age">Age: </label>
+                  <input type="text" name="age" id="age"><br>
+                  <label for="sdate">Surgery Date: </label>
+                  <input type="text" name="sdate" id="sdate"><br>
+                  <label for="procedure">Procedure: </label>
+                  <input type="text" name="procedure" id="procedure"><br>
+                  <label for="duration">Procedure Duration: </label>
+                  <input type="text" name="duration" id="duration"><br>
+                  <label for="bloodloss">Blood Loss: </label>
+                  <input type="text" name="bloodloss" id="bloodloss"><br>
+                  <label for="sweight">Specimen Weight: </label>
+                  <input type="text" name="sweight" id="sweight"><br>
+                  <label for="notes">Surgery Notes: </label>
+                  <input type="text" name="notes" id="notes"><br>
+                  <?php
+                     $stmt = $db->prepare('SELECT * FROM pathology');
+                     $stmt->execute();
+                     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+                     foreach ($rows as $row=>$r) {
+                        $p = $r['pathology'];
+                        $id = $r['id'];
+                        echo "<input type='checkbox' name='topics[]' value='$id'>$p<br>";
+                     }
+                  ?>
                </form>
             </div>
             <div class='col-6'>
-               <input type="checkbox" id='patientcheck'>     
+               <input type="checkbox" id='patientcheck' value='New Patient'>     
                <form action="data.php" action='post' id='patientData' class='hide'>
                test
                </form>
