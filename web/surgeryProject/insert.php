@@ -103,6 +103,7 @@
                <input type="text" name="dob" id="dob" class='pat hide'> <br class='pat hide'>
                <label for='insurance' class='pat hide'>Insurance: </label>
                <select name="insurance" id="insurance" class='pat hide'>
+                  <option value='na'>--SELECT--</option>
                <?php
                   $stmt = $db->prepare('SELECT * FROM insurance');
                   $stmt->execute();
@@ -116,6 +117,7 @@
                ?>
                </select>
             </div>
+            <input type="submit" value='insert'>
          </form>
       </div>
    </main>
