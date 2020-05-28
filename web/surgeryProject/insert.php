@@ -56,29 +56,29 @@
    <main>
       <div class='container container-fluid'>
          <div class='row'>
-            <form action="data.php" method='post' id='surgeryData' class='hide'>
+            <form action="data.php" method='post' id='surgeryData'>
                <div class='col-6'>
-                  <input type="checkbox" id='surgerycheck' value='New Surgery'>
-                  <label for="surgerycheck">New Surgery</label>
-                  <label for="f_name">Patient First Name: </label>
-                  <input type="text" name='f_name' id='f_name'><br>
-                  <label for="l_name">Patient Last Name: </label>
-                  <input type="text" name='l_name' id='l_name'><br>
-                  <label for="age">Age: </label>
-                  <input type="text" name="age" id="age"><br>
-                  <label for="sdate">Surgery Date: </label>
-                  <input type="text" name="sdate" id="sdate"><br>
-                  <label for="procedure">Procedure: </label>
-                  <input type="text" name="procedure" id="procedure"><br>
-                  <label for="duration">Procedure Duration: </label>
-                  <input type="text" name="duration" id="duration"><br>
-                  <label for="bloodloss">Blood Loss: </label>
-                  <input type="text" name="bloodloss" id="bloodloss"><br>
-                  <label for="sweight">Specimen Weight: </label>
-                  <input type="text" name="sweight" id="sweight"><br>
-                  <label for="notes">Surgery Notes: </label>
-                  <input type="text" name="notes" id="notes"><br>
-                  <label>Pathologies: </label><br>
+                  <input type="checkbox" id='surgerycheck' name='surgerycheck' value='New Surgery'>
+                  <label for="surgerycheck" class='surg hide'>New Surgery</label>
+                  <label for="f_name" class='surg hide'>Patient First Name: </label>
+                  <input type="text" name='f_name' id='f_name' class='surg hide'><br>
+                  <label for="l_name" class='surg hide'>Patient Last Name: </label>
+                  <input type="text" name='l_name' id='l_name' class='surg hide'><br>
+                  <label for="age" class='surg hide'>Age: </label>
+                  <input type="text" name="age" id="age" class='surg hide'><br>
+                  <label for="sdate" class='surg hide'>Surgery Date: </label>
+                  <input type="text" name="sdate" id="sdate" class='surg hide'><br>
+                  <label for="procedure" class='surg hide'>Procedure: </label>
+                  <input type="text" name="procedure" id="procedure" class='surg hide'><br>
+                  <label for="duration" class='surg hide'>Procedure Duration: </label>
+                  <input type="text" name="duration" id="duration" class='surg hide'><br>
+                  <label for="bloodloss" class='surg hide'>Blood Loss: </label>
+                  <input type="text" name="bloodloss" id="bloodloss" class='surg hide'><br>
+                  <label for="sweight" class='surg hide'>Specimen Weight: </label>
+                  <input type="text" name="sweight" id="sweight" class='surg hide'><br>
+                  <label for="notes" class='surg hide'>Surgery Notes: </label>
+                  <input type="text" name="notes" id="notes" class='surg hide'><br>
+                  <label class='surg hide'>Pathologies: </label><br>
                   <?php
                      $stmt = $db->prepare('SELECT * FROM pathology');
                      $stmt->execute();
@@ -87,7 +87,7 @@
                      foreach ($rows as $row=>$r) {
                         $p = $r['pathology'];
                         $id = $r['id'];
-                        echo "<input type='checkbox' name='pathologies[]' value='$id'>$p<br>";
+                        echo "<input type='checkbox' name='pathologies[]' value='$id' class='surg hide'>$p<br>";
                      }
                   ?>
                </div>
