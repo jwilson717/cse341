@@ -15,6 +15,7 @@
    <title>Data Entry</title>
    <link rel='stylesheet' type='text/css' href='css/bootstrap.min.css'>
    <link rel='stylesheet' type='text/css' href='css/styles.css'>
+   <link rel='stylesheet' type='text/css' href='css/insertStyles.css'>
 </head>
 <body>
    <header>
@@ -33,13 +34,13 @@
          <div class='row'>
             <div class='col-6'>
                <input type="checkbox" id='surgery'>
-               <form action="data.php" method='post' id='surgeryData'>
+               <form action="data.php" method='post' id='surgeryData' class='hide'>
                   test
                </form>
             </div>
             <div class='col-6'>
                <input type="checkbox" id='patient'>     
-               <form action="data.php" action='post' id='patientData'>
+               <form action="data.php" action='post' id='patientData' class='hide'>
                test
                </form>
             </div>
