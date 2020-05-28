@@ -94,7 +94,6 @@
                <div class='col-6'>
                   <input type="checkbox" id='patientcheck' value='New Patient'>     
                   <label for="patientcheck">New Patient</label>
-                  test
                </div>
             </form>
          </div>
