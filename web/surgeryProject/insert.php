@@ -56,10 +56,10 @@
    <main>
       <div class='container container-fluid'>
          <div class='row'>
-            <div class='col-6'>
-               <input type="checkbox" id='surgerycheck' value='New Surgery'>
-               <label for="surgerycheck">New Surgery</label>
-               <form action="data.php" method='post' id='surgeryData' class='hide'>
+            <form action="data.php" method='post' id='surgeryData' class='hide'>
+               <div class='col-6'>
+                  <input type="checkbox" id='surgerycheck' value='New Surgery'>
+                  <label for="surgerycheck">New Surgery</label>
                   <label for="f_name">Patient First Name: </label>
                   <input type="text" name='f_name' id='f_name'><br>
                   <label for="l_name">Patient Last Name: </label>
@@ -78,7 +78,7 @@
                   <input type="text" name="sweight" id="sweight"><br>
                   <label for="notes">Surgery Notes: </label>
                   <input type="text" name="notes" id="notes"><br>
-                  <label>Pathologies: </label>
+                  <label>Pathologies: </label><br>
                   <?php
                      $stmt = $db->prepare('SELECT * FROM pathology');
                      $stmt->execute();
@@ -90,15 +90,13 @@
                         echo "<input type='checkbox' name='pathologies[]' value='$id'>$p<br>";
                      }
                   ?>
-               </form>
-            </div>
-            <div class='col-6'>
-               <input type="checkbox" id='patientcheck' value='New Patient'>     
-               <label for="patientcheck">New Patient</label>
-               <form action="data.php" action='post' id='patientData' class='hide'>
-               test
-               </form>
-            </div>
+               </div>
+               <div class='col-6'>
+                  <input type="checkbox" id='patientcheck' value='New Patient'>     
+                  <label for="patientcheck">New Patient</label>
+                  test
+               </div>
+            </form>
          </div>
       </div>
    </main>
