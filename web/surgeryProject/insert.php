@@ -59,7 +59,7 @@
             <form action="data.php" method='post' id='surgeryData'>
                <div class='col-6'>
                   <input type="checkbox" id='surgerycheck' name='surgerycheck' value='New Surgery'>
-                  <label for="surgerycheck">New Surgery</label>
+                  <label for="surgerycheck">New Surgery</label><br class='surg hide'>
                   <label for="f_name" class='surg hide'>Patient First Name: </label>
                   <input type="text" name='f_name' id='f_name' class='surg hide'><br class='surg hide'>
                   <label for="l_name" class='surg hide'>Patient Last Name: </label>
