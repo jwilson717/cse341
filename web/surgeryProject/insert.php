@@ -33,13 +33,13 @@
       <div class='container container-fluid'>
          <div class='row'>
             <div class='col-6'>
-               <input type="checkbox" id='surgery'>
+               <input type="checkbox" id='surgerycheck'>
                <form action="data.php" method='post' id='surgeryData' class='hide'>
                   test
                </form>
             </div>
             <div class='col-6'>
-               <input type="checkbox" id='patient'>     
+               <input type="checkbox" id='patientcheck'>     
                <form action="data.php" action='post' id='patientData' class='hide'>
                test
                </form>
