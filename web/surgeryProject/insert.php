@@ -58,6 +58,7 @@
          <div class='row'>
             <div class='col-6'>
                <input type="checkbox" id='surgerycheck' value='New Surgery'>
+               <label for="surgerycheck">New Surgery</label>
                <form action="data.php" method='post' id='surgeryData' class='hide'>
                   <label for="f_name">Patient First Name: </label>
                   <input type="text" name='f_name' id='f_name'><br>
@@ -93,6 +94,7 @@
             </div>
             <div class='col-6'>
                <input type="checkbox" id='patientcheck' value='New Patient'>     
+               <label for="patientcheck">New Patient</label>
                <form action="data.php" action='post' id='patientData' class='hide'>
                test
                </form>
