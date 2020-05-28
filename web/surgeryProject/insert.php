@@ -92,7 +92,29 @@
             </div>
             <div class='col-6'>
                <input type="checkbox" id='patientcheck' value='New Patient'>     
-               <label for="patientcheck">New Patient</label>
+               <label for="patientcheck">New Patient</label><br class='pat hide'>
+               <label for="recordnum" class='pat hide'>Record Numer: </label>
+               <input type="text" name="recordnum" id="recordnum" class='pat hide'><br class='pat hide'>
+               <label for="pf_name" class='pat hide'>Patient First Name: </label>
+               <input type="text" name="pf_name" id="pf_name" class='pat hide'><br class='pat hide'>
+               <label for="pl_name">Patient Last Name</label>
+               <input type="text" name="pl_name" id="pl_name" class='pat hide'><br class='pat hide'>
+               <label for="dob" class='pat hide'>Date of Birth: </label>
+               <input type="text" name="dob" id="dob" class='pat hide'> <br class='pat hide'>
+               <label for='insurance' class='pat hide'>Insurance: </label>
+               <select name="insurance" id="insurance" class='pat hide'>
+               <?php
+                  $stmt = $db->prepare('SELECT * FROM insurance');
+                  $stmt->execute();
+                  $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+                  foreach ($rows as $row=>$r) {
+                     $p = $r['name'];
+                     $id = $r['id'];
+                     echo "<option value='$id'>$p</option>";
+                  }
+               ?>
+               </select>
             </div>
          </form>
       </div>

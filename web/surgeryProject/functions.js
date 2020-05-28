@@ -21,9 +21,9 @@ $(document).ready(function () {
 
    $('#patientcheck').change(function() {
       if ($('#patientcheck').is(':checked')) {
-         $('#patientData').removeClass('hide');
+         $('.pat').removeClass('hide');
       } else {
-         $('#patientData').addClass('hide');
+         $('.pat').addClass('hide');
       }
    });
 
