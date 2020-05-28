@@ -77,6 +77,7 @@
                   <input type="text" name="sweight" id="sweight"><br>
                   <label for="notes">Surgery Notes: </label>
                   <input type="text" name="notes" id="notes"><br>
+                  <label>Pathologies: </label>
                   <?php
                      $stmt = $db->prepare('SELECT * FROM pathology');
                      $stmt->execute();
@@ -85,7 +86,7 @@
                      foreach ($rows as $row=>$r) {
                         $p = $r['pathology'];
                         $id = $r['id'];
-                        echo "<input type='checkbox' name='topics[]' value='$id'>$p<br>";
+                        echo "<input type='checkbox' name='pathologies[]' value='$id'>$p<br>";
                      }
                   ?>
                </form>
