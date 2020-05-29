@@ -127,6 +127,7 @@ session_start();
             $sid = $db->lastInsertId('surgery_surgery_id_seq');
 
             foreach ($pathologies as $path=>$p) {
+               echo $p;
                $con = $db->prepare("INSERT INTO pathology_connect (surgery_id, pathology_id) VALUES ($sid, $p)");
                $con->execute();
             }
