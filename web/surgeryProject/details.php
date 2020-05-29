@@ -74,7 +74,7 @@
          foreach ($rows as $row=>$p) {
             echo "<p class='path'>" . $p['pathology'] . "</p>";
          }
-         echo "Notes: <textarea name='newnotes'>" . $r['notes'] . "</textarea><br>";
+         echo "Notes: <textarea name='newnotes' id='newnotes'>" . $r['notes'] . "</textarea><br>";
          echo "<button class='btn btn-secondary' id='updatenote'>Update</button>";
          echo "<div id='res'></div>";
          echo "<h2>Patient Info</h2>";
