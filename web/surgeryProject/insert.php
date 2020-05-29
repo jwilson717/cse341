@@ -55,7 +55,7 @@
    </nav>
    <main>
       <div class='container container-fluid'>
-         <form action="data.php" method='post' id='surgeryData' class='row justify-content-center'>
+         <form action="data.php" method='post' id='surgeryData' class='row'>
             <div class='col-6'>
                <input type="checkbox" id='surgerycheck' name='surgerycheck' value='New Surgery'>
                <label for="surgerycheck">New Surgery</label><br class='surg hide'>
