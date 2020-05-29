@@ -97,7 +97,7 @@
                <input type="text" name="recordnum" id="recordnum" class='pat hide preq'><br class='pat hide'>
                <label for="pf_name" class='pat hide'>Patient First Name: </label>
                <input type="text" name="pf_name" id="pf_name" class='pat hide preq'><br class='pat hide'>
-               <label for="pl_name">Patient Last Name</label>
+               <label for="pl_name" class='pat hide'>Patient Last Name</label>
                <input type="text" name="pl_name" id="pl_name" class='pat hide preq'><br class='pat hide'>
                <label for="dob" class='pat hide'>Date of Birth: </label>
                <input type="text" name="dob" id="dob" class='pat hide preq'> <br class='pat hide'>
