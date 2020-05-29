@@ -64,25 +64,25 @@ session_start();
    if (isset($_POST['duration'])) {
       $duration = htmlspecialchars($_POST['duration']);
    } else {
-      $duration = '';
+      $duration = 'null';
    }
 
    if (isset($_POST['bloodloss'])) {
       $bloodloss = htmlspecialchars($_POST['bloodloss']);
    } else {
-      $bloodloss = '';
+      $bloodloss = 'null';
    }
 
    if (isset($_POST['sweight'])) {
       $sweight = htmlspecialchars($_POST['sweight']);
    } else {
-      $sweight = '';
+      $sweight = 'null';
    }
 
    if(isset($_POST['notes'])) {
       $notes = htmlspecialchars($_POST['notes']);
    } else {
-      $notes = '';
+      $notes = 'null';
    }
 
       if(isset($_POST['pathologies'])) {
@@ -121,7 +121,7 @@ session_start();
          $q->execute();
          $rows = $q->fetchAll(PDO::FETCH_ASSOC);
          if (count($rows) > 0) {
-            $stmt = $db->prepare("INSERT INTO surgery (patient_id, age, surgery_date, procedure, procedure_duration, blood_loss, specimen_weight, notes) VALUES ((SELECT record_num FROM patient WHERE f_name = $fname AND l_name = $lname), $age, $sdate, $procedure, NULLIF($duration, ''), NULLIF($bloodloss, ''), NULLIF($sweight,''), NULLIF($notes, ''))");
+            $stmt = $db->prepare("INSERT INTO surgery (patient_id, age, surgery_date, procedure, procedure_duration, blood_loss, specimen_weight, notes) VALUES ((SELECT record_num FROM patient WHERE f_name = $fname AND l_name = $lname), $age, $sdate, $procedure, NULLIF($duration, 'null'), NULLIF($bloodloss, 'null'), NULLIF($sweight,'null'), NULLIF($notes, 'null'))");
             $stmt->execute();
             $sid = $db->lastInsertId('surgery_id_seq');
 
