@@ -87,7 +87,6 @@ session_start();
 
       if(isset($_POST['pathologies'])) {
          $pathologies = $_POST['pathologies'];
-         print_r($pathologies);
       } else {
          $pathologies = [];
       }
@@ -113,8 +112,9 @@ session_start();
       }
 
       if($insertpatient) {
-         $stmt = $db->prepare("INSERT INTO patient (record_num, f_name, l_name, dob, insurance_id) VALUES ($recordnum, $pf_name, $pl_name, $dob, $insurance)");
+         $stmt = $db->prepare("INSERT INTO patient (record_num, f_name, l_name, dob, insurance_id) VALUES ($recordnum, '$pf_name', '$pl_name', '$dob', $insurance)");
          $stmt->execute();
+         echo 'Test';
       }
 
       if($insertsurgery) {
