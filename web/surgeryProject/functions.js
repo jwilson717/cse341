@@ -34,6 +34,7 @@ $(document).ready(function () {
    });
 
    $('#updatenote').click(function(){
+      console.log('Test');
       var newnote = $('#newnotes').val();
       var record = $('#record').val();
       $.post('update.php', {newnotes: newnote, record: record}, function(data) {
