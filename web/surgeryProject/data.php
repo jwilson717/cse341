@@ -132,7 +132,7 @@ session_start();
                $con->execute();
             }
 
-            $message = 'Insert Successfully Completed.'
+            $message = 'Insert Successfully Completed.';
          } else {
             $error = "Incorrect Patient Data.";
          }
