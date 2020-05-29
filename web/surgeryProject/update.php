@@ -33,7 +33,7 @@
       try {
          $note = htmlspecialchars($_POST['newnotes']);
          $id = $_POST['record'];
-         $up = $db->prepare("UPDATE surgery SET notes = '$notes' WHERE surgery_id = $id");
+         $up = $db->prepare("UPDATE surgery SET notes = NULLIF('$notes', '') WHERE surgery_id = $id");
          $up->execute();
 
          echo "<p>Note successfully updated.";
