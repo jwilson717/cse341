@@ -67,12 +67,16 @@ session_start();
       $duration = -1;
    }
 
+   if ($duration == '') {
+      $duration = -1;
+   }
+
    if (isset($_POST['bloodloss'])) {
       $bloodloss = htmlspecialchars($_POST['bloodloss']);
    } else {
       $bloodloss = -1;
    }
-   echo "Bld: " . $bloodloss;
+   
    if (isset($_POST['sweight'])) {
       $sweight = htmlspecialchars($_POST['sweight']);
    } else {
