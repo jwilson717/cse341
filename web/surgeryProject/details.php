@@ -42,6 +42,7 @@
    <title>Data Entry</title>
    <link rel='stylesheet' type='text/css' href='css/bootstrap.min.css'>
    <link rel='stylesheet' type='text/css' href='css/styles.css'>
+   <link rel='stylesheet' type='text/css' href='css/detailStyles.css'>
 </head>
 <body>
    <header>
@@ -63,20 +64,36 @@
          $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
          print_r($rows);
          
-         foreach ($rows as $row=>$r) {
-            echo "<p>Procedure: " . $r['procedure'] . "</p>";
-            echo "<p>Surgery Date: " . $r['surgery_date'] . "</p>";
-            echo "<p>Procedure Duration: " . $r['procedure_duration'] . "</p>";
-            echo "<p>Blood Loss: " . $r['blood_loss'] . "</p>";
-            echo "<p>Specimen Weight: " . $r['specimen_weight'] . "</p>";
-            echo "<p>Pathology: " . $r['pathology'] . "</p>";
-            echo "<h2>Patient Info</h2>";
-            echo "<p>Name: " . $r['f_name'] . " " . $r['l_name'] .  "</p>";
-            echo "<p>Record Number: " . $r['record_num'] . "</p>";
-            echo "<p>Age: " . $r['age'] . "</p>";
-            echo "<p>DOB: " . $r['dob'] . "</p>";
-            echo "<p>Insurance: " . $r['name'] . "</p>";
+         // foreach ($rows as $row=>$r) {
+         //    echo "<p>Procedure: " . $r['procedure'] . "</p>";
+         //    echo "<p>Surgery Date: " . $r['surgery_date'] . "</p>";
+         //    echo "<p>Procedure Duration: " . $r['procedure_duration'] . "</p>";
+         //    echo "<p>Blood Loss: " . $r['blood_loss'] . "</p>";
+         //    echo "<p>Specimen Weight: " . $r['specimen_weight'] . "</p>";
+         //    echo "<p>Pathology: " . $r['pathology'] . "</p>";
+         //    echo "<h2>Patient Info</h2>";
+         //    echo "<p>Name: " . $r['f_name'] . " " . $r['l_name'] .  "</p>";
+         //    echo "<p>Record Number: " . $r['record_num'] . "</p>";
+         //    echo "<p>Age: " . $r['age'] . "</p>";
+         //    echo "<p>DOB: " . $r['dob'] . "</p>";
+         //    echo "<p>Insurance: " . $r['name'] . "</p>";
+         // }
+         $r = $rows[0];
+         echo "<p>Procedure: " . $r['procedure'] . "</p>";
+         echo "<p>Surgery Date: " . $r['surgery_date'] . "</p>";
+         echo "<p>Procedure Duration: " . $r['procedure_duration'] . "</p>";
+         echo "<p>Blood Loss: " . $r['blood_loss'] . "</p>";
+         echo "<p>Specimen Weight: " . $r['specimen_weight'] . "</p>";
+         echo "<p>Pathology:</p>";
+         foreach ($rows as $row=>$p) {
+            echo "<p class='path'>" . $p['pathology'] . "</p>";
          }
+         echo "<h2>Patient Info</h2>";
+         echo "<p>Name: " . $r['f_name'] . " " . $r['l_name'] .  "</p>";
+         echo "<p>Record Number: " . $r['record_num'] . "</p>";
+         echo "<p>Age: " . $r['age'] . "</p>";
+         echo "<p>DOB: " . $r['dob'] . "</p>";
+         echo "<p>Insurance: " . $r['name'] . "</p>";
       ?>
    </main>
    <footer>
