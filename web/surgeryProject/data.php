@@ -112,9 +112,8 @@ session_start();
       }
 
       if($insertpatient) {
-         $stmt = $db->prepare("INSERT INTO patient (record_num, f_name, l_name, dob, insurance_id) VALUES ($recordnum, '$pf_name', '$pl_name', '$dob', $insurance)");
+         $stmt = $db->prepare("INSERT INTO patient (record_num, f_name, l_name, dob, insurance_id) VALUES ($recordnum, '$pf_name', '$pl_name', '$dob', NULLIF($insurance, '-1')");
          $stmt->execute();
-         echo 'Test';
       }
 
       if($insertsurgery) {

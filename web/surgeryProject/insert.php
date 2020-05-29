@@ -103,7 +103,7 @@
                <input type="text" name="dob" id="dob" class='pat hide preq'> <br class='pat hide'>
                <label for='insurance' class='pat hide'>Insurance: </label>
                <select name="insurance" id="insurance" class='pat hide'>
-                  <option value='na'>--SELECT--</option>
+                  <option value='-1'>--SELECT--</option>
                <?php
                   $stmt = $db->prepare('SELECT * FROM insurance');
                   $stmt->execute();
