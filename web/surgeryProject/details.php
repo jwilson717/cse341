@@ -73,7 +73,7 @@
          foreach ($rows as $row=>$p) {
             echo "<p class='path'>" . $p['pathology'] . "</p>";
          }
-         echo "Notes: " . $r['notes'];
+         echo "Notes: <textarea name='newnotes'>" . $r['notes'] . "</textarea>";
          echo "<h2>Patient Info</h2>";
          echo "<p>Name: " . $r['f_name'] . " " . $r['l_name'] .  "</p>";
          echo "<p>Record Number: " . $r['record_num'] . "</p>";
