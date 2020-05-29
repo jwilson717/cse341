@@ -91,7 +91,7 @@
                ?>
             </div>
             <div class='col-6'>
-               <input type="checkbox" id='patientcheck' value='New Patient'>     
+               <input type="checkbox" id='patientcheck' name='patientcheck' value='New Patient'>     
                <label for="patientcheck">New Patient</label><br class='pat hide'>
                <label for="recordnum" class='pat hide'>Record Numer: </label>
                <input type="text" name="recordnum" id="recordnum" class='pat hide preq'><br class='pat hide'>
