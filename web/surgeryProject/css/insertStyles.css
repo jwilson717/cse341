@@ -6,12 +6,6 @@
    display: none;
 }
 
-@media screen and (max-width: 100px) {
-   .surg {
-      display: block;
-   }
-}
-
 @media screen and (max-width: 610px) {
    .col-6 {
       min-width: 100%;
