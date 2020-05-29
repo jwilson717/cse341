@@ -72,7 +72,7 @@ session_start();
    } else {
       $bloodloss = -1;
    }
-   echo $bloodloss;
+   echo "Bld: " . $bloodloss;
    if (isset($_POST['sweight'])) {
       $sweight = htmlspecialchars($_POST['sweight']);
    } else {
