@@ -114,6 +114,7 @@ session_start();
       if($insertpatient) {
          $stmt = $db->prepare("INSERT INTO patient (record_num, f_name, l_name, dob, insurance_id) VALUES ($recordnum, '$pf_name', '$pl_name', '$dob', NULLIF($insurance, -1))");
          $stmt->execute();
+         $message = 'Insert Successfully Completed.'
       }
 
       if($insertsurgery) {
@@ -130,6 +131,8 @@ session_start();
                $con = $db->prepare("INSERT INTO pathology_connect (surgery_id, pathology_id) VALUES ($sid, $p)");
                $con->execute();
             }
+
+            $message = 'Insert Successfully Completed.'
          } else {
             $error = "Incorrect Patient Data.";
          }
@@ -163,6 +166,7 @@ session_start();
             echo $error;
          } else {
             echo $message;
+            echo "<a href='insert.php'> Return to insert page</a>";
          }
       ?>
    </main>
