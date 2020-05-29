@@ -15,9 +15,10 @@ $(document).ready(function () {
       if ($('#surgerycheck').is(':checked')) {
          $('.surg').removeClass('hide');
          $('#insert').removeClass('hide');
+         $('.req').prop('require', true);
       } else {
          $('.surg').addClass('hide');
-         $('.preq').prop('required', false);
+         $('.req').prop('required', false);
       }
    });
 
