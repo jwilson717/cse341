@@ -54,21 +54,22 @@
       </ul>
    </nav>
    <main>
+      <h2 id='insertres'></h2>
       <div class='container container-fluid'>
          <form action="data.php" method='post' id='surgeryData' class='row'>
             <div class='col-6'>
                <input type="checkbox" id='surgerycheck' name='surgerycheck' value='New Surgery'>
                <label for="surgerycheck">New Surgery</label><br class='surg hide'>
                <label for="f_name" class='surg hide'>Patient First Name: </label>
-               <input type="text" name='f_name' id='f_name' class='surg hide'><br class='surg hide'>
+               <input type="text" name='f_name' id='f_name' class='surg hide req' require><br class='surg hide'>
                <label for="l_name" class='surg hide'>Patient Last Name: </label>
-               <input type="text" name='l_name' id='l_name' class='surg hide'><br class='surg hide'>
+               <input type="text" name='l_name' id='l_name' class='surg hide req' require><br class='surg hide'>
                <label for="age" class='surg hide'>Age: </label>
-               <input type="text" name="age" id="age" class='surg hide'><br class='surg hide'>
+               <input type="text" name="age" id="age" class='surg hide req' require><br class='surg hide'>
                <label for="sdate" class='surg hide'>Surgery Date: </label>
-               <input type="text" name="sdate" id="sdate" class='surg hide'><br class='surg hide'>
+               <input type="text" name="sdate" id="sdate" class='surg hide req' require><br class='surg hide'>
                <label for="procedure" class='surg hide'>Procedure: </label>
-               <input type="text" name="procedure" id="procedure" class='surg hide'><br class='surg hide'>
+               <input type="text" name="procedure" id="procedure" class='surg hide req' require><br class='surg hide'>
                <label for="duration" class='surg hide'>Procedure Duration: </label>
                <input type="text" name="duration" id="duration" class='surg hide'><br class='surg hide'>
                <label for="bloodloss" class='surg hide'>Blood Loss: </label>
@@ -94,13 +95,13 @@
                <input type="checkbox" id='patientcheck' value='New Patient'>     
                <label for="patientcheck">New Patient</label><br class='pat hide'>
                <label for="recordnum" class='pat hide'>Record Numer: </label>
-               <input type="text" name="recordnum" id="recordnum" class='pat hide'><br class='pat hide'>
+               <input type="text" name="recordnum" id="recordnum" class='pat hide preq'><br class='pat hide'>
                <label for="pf_name" class='pat hide'>Patient First Name: </label>
-               <input type="text" name="pf_name" id="pf_name" class='pat hide'><br class='pat hide'>
+               <input type="text" name="pf_name" id="pf_name" class='pat hide preq'><br class='pat hide'>
                <label for="pl_name">Patient Last Name</label>
-               <input type="text" name="pl_name" id="pl_name" class='pat hide'><br class='pat hide'>
+               <input type="text" name="pl_name" id="pl_name" class='pat hide preq'><br class='pat hide'>
                <label for="dob" class='pat hide'>Date of Birth: </label>
-               <input type="text" name="dob" id="dob" class='pat hide'> <br class='pat hide'>
+               <input type="text" name="dob" id="dob" class='pat hide preq'> <br class='pat hide'>
                <label for='insurance' class='pat hide'>Insurance: </label>
                <select name="insurance" id="insurance" class='pat hide'>
                   <option value='na'>--SELECT--</option>
