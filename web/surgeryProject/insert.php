@@ -111,7 +111,7 @@
 
                   foreach ($rows as $row=>$r) {
                      $p = $r['name'];
-                     $id = $r['id'];
+                     $id = $r['insurance_id'];
                      echo "<option value='$id'>$p</option>";
                   }
                ?>
