@@ -61,15 +61,15 @@
                <input type="checkbox" id='surgerycheck' name='surgerycheck' value='New Surgery'>
                <label for="surgerycheck">New Surgery</label><br class='surg hide'>
                <label for="f_name" class='surg hide'>Patient First Name: </label>
-               <input type="text" name='f_name' id='f_name' class='surg hide req' require><br class='surg hide'>
+               <input type="text" name='f_name' id='f_name' class='surg hide req' required><br class='surg hide'>
                <label for="l_name" class='surg hide'>Patient Last Name: </label>
-               <input type="text" name='l_name' id='l_name' class='surg hide req' require><br class='surg hide'>
+               <input type="text" name='l_name' id='l_name' class='surg hide req' required><br class='surg hide'>
                <label for="age" class='surg hide'>Age: </label>
-               <input type="text" name="age" id="age" class='surg hide req' require><br class='surg hide'>
+               <input type="text" name="age" id="age" class='surg hide req' required><br class='surg hide'>
                <label for="sdate" class='surg hide'>Surgery Date: </label>
-               <input type="text" name="sdate" id="sdate" class='surg hide req' require><br class='surg hide'>
+               <input type="text" name="sdate" id="sdate" class='surg hide req' required><br class='surg hide'>
                <label for="procedure" class='surg hide'>Procedure: </label>
-               <input type="text" name="procedure" id="procedure" class='surg hide req' require><br class='surg hide'>
+               <input type="text" name="procedure" id="procedure" class='surg hide req' required><br class='surg hide'>
                <label for="duration" class='surg hide'>Procedure Duration: </label>
                <input type="text" name="duration" id="duration" class='surg hide'><br class='surg hide'>
                <label for="bloodloss" class='surg hide'>Blood Loss: </label>

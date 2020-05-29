@@ -17,7 +17,7 @@ $(document).ready(function () {
          $('#insert').removeClass('hide');
       } else {
          $('.surg').addClass('hide');
-         $('.preq').prop('require', false);
+         $('.preq').prop('required', false);
       }
    });
 
@@ -25,10 +25,10 @@ $(document).ready(function () {
       if ($('#patientcheck').is(':checked')) {
          $('.pat').removeClass('hide');
          $('#insert').removeClass('hide');
-         $('.preq').prop('require', true);
+         $('.preq').prop('required', true);
       } else {
          $('.pat').addClass('hide');
-         $('.preq').prop('require', false);
+         $('.preq').prop('required', false);
       }
    });
 
