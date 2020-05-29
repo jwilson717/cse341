@@ -117,7 +117,7 @@ session_start();
       }
 
       if($insertsurgery) {
-         $q = $db->prepare("SELECT * FROM patient WHERE f_name = $pf_name AND l_name = $pl_name");
+         $q = $db->prepare("SELECT * FROM patient WHERE f_name = '$pf_name' AND l_name = '$pl_name'");
          $q->execute();
          $rows = $q->fetchAll(PDO::FETCH_ASSOC);
 
