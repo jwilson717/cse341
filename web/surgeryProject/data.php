@@ -121,7 +121,7 @@ session_start();
          $q->execute();
          $rows = $q->fetchAll(PDO::FETCH_ASSOC);
          if (count($rows) > 0) {
-            $stmt = $db->prepare("INSERT INTO surgery (patient_id, age, surgery_date, procedure, procedure_duration, blood_loss, specimen_weight, notes) VALUES ((SELECT record_num FROM patient WHERE f_name = $f_name AND l_name = $l_name), $age, $sdate, $procedure, NULLIF($duration, ''), NULLIF($bloodloss, ''), NULLIF($sweight,''), NULLIF($notes, ''))");
+            $stmt = $db->prepare("INSERT INTO surgery (patient_id, age, surgery_date, procedure, procedure_duration, blood_loss, specimen_weight, notes) VALUES ((SELECT record_num FROM patient WHERE f_name = $fname AND l_name = $lname), $age, $sdate, $procedure, NULLIF($duration, ''), NULLIF($bloodloss, ''), NULLIF($sweight,''), NULLIF($notes, ''))");
             $stmt->execute();
             $sid = $db->lastInsertId('surgery_id_seq');
 
