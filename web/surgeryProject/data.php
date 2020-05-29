@@ -76,10 +76,18 @@ session_start();
    } else {
       $bloodloss = -1;
    }
+
+   if($bloodloss == '') {
+      $bloodloss = -1;
+   }
    
    if (isset($_POST['sweight'])) {
       $sweight = htmlspecialchars($_POST['sweight']);
    } else {
+      $sweight = -1;
+   }
+
+   if ($sweight == '') {
       $sweight = -1;
    }
 
