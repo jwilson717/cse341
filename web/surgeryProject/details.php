@@ -64,6 +64,7 @@
          $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
          
          $r = $rows[0];
+         echo "<span class='hide' id='record'>$record</span>";
          echo "<p>Procedure: " . $r['procedure'] . "</p>";
          echo "<p>Surgery Date: " . $r['surgery_date'] . "</p>";
          echo "<p>Procedure Duration: " . $r['procedure_duration'] . "</p>";
@@ -74,6 +75,8 @@
             echo "<p class='path'>" . $p['pathology'] . "</p>";
          }
          echo "Notes: <textarea name='newnotes'>" . $r['notes'] . "</textarea>";
+         echo "<button class='btn btn-secondary' id='updatenote'>Update</button>";
+         echo "<div id='res'></div>";
          echo "<h2>Patient Info</h2>";
          echo "<p>Name: " . $r['f_name'] . " " . $r['l_name'] .  "</p>";
          echo "<p>Record Number: " . $r['record_num'] . "</p>";
@@ -85,5 +88,7 @@
    <footer>
       <p>&copy; Jaden Wilson 2020 (CSE 341 BYUI)</p>
    </footer>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script src='functions.js'></script>
 </body>
 </html>

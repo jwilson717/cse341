@@ -33,4 +33,11 @@ $(document).ready(function () {
       }
    });
 
+   $('#updatenote').click(function(){
+      var newnote = $('#newnotes').val();
+      var record = $('#record').val();
+      $.post('update.php', {newnotes: newnote, record: record}, function(data) {
+         $('#res').html(data);
+      });
+   });
 });
