@@ -120,6 +120,7 @@ session_start();
          $q = $db->prepare("SELECT * FROM patient WHERE f_name = '$fname' AND l_name = '$lname'");
          $q->execute();
          $rows = $q->fetchAll(PDO::FETCH_ASSOC);
+         echo $bloodloss;
          if (count($rows) > 0) {
             $stmt = $db->prepare("INSERT INTO surgery (patient_id, age, surgery_date, procedure, procedure_duration, blood_loss, specimen_weight, notes) VALUES ((SELECT record_num FROM patient WHERE f_name = $fname AND l_name = $lname), $age, $sdate, $procedure, NULLIF($duration, 'null'), NULLIF($bloodloss, 'null'), NULLIF($sweight,'null'), NULLIF($notes, 'null'))");
             $stmt->execute();
