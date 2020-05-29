@@ -177,7 +177,7 @@ session_start();
          if(isset($error)) {
             echo $error;
          } else {
-            echo $message;
+            echo $message . "<br>";
             echo "<a href='insert.php'> Return to insert page</a>";
          }
       ?>
