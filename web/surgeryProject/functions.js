@@ -14,6 +14,7 @@ $(document).ready(function () {
    $('#surgerycheck').change(function() {
       if ($('#surgerycheck').is(':checked')) {
          $('.surg').removeClass('hide');
+         $('#insert').removeClass('hide');
       } else {
          $('.surg').addClass('hide');
       }
@@ -22,6 +23,7 @@ $(document).ready(function () {
    $('#patientcheck').change(function() {
       if ($('#patientcheck').is(':checked')) {
          $('.pat').removeClass('hide');
+         $('#insert').removeClass('hide');
       } else {
          $('.pat').addClass('hide');
       }

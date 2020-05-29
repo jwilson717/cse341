@@ -117,7 +117,7 @@
                ?>
                </select>
             </div>
-            <input type="submit" value='insert'>
+            <input type="submit" value='insert' id='insert' class='hide'>
          </form>
       </div>
    </main>
