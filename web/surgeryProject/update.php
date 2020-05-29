@@ -35,7 +35,7 @@
          $id = $_POST['record'];
          $up = $db->prepare("UPDATE surgery SET notes = NULLIF('$notes', '') WHERE surgery_id = $id");
          $up->execute();
-
+         echo $note;
          echo "<p>Note successfully updated.";
       } catch (Exception $e) {
          echo "<p class='error'>Error updating note</p>";
