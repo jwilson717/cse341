@@ -64,7 +64,7 @@
          $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
          
          $r = $rows[0];
-         echo "<span class='hide' id='record'>$record</span>";
+         echo "<p class='hide' id='record'>$record</p>";
          echo "<p>Procedure: " . $r['procedure'] . "</p>";
          echo "<p>Surgery Date: " . $r['surgery_date'] . "</p>";
          echo "<p>Procedure Duration: " . $r['procedure_duration'] . "</p>";
