@@ -85,8 +85,8 @@
 
                   foreach ($rows as $row=>$r) {
                      $p = $r['pathology'];
-                     $id = $r['id'];
-                     echo "<input type='checkbox' name='pathologies[]' value='$id' class='surg hide'><label class='surg hide'>$id $p</label><br class='surg hide'>";
+                     $id = $r['pathology_id'];
+                     echo "<input type='checkbox' name='pathologies[]' value='$id' class='surg hide'><label class='surg hide'>$p</label><br class='surg hide'>";
                   }
                ?>
             </div>
