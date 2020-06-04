@@ -14,4 +14,8 @@
    .col-6 {
       min-width: 100%;
    }
+
+   #patientcheck {
+      margin-top: 8px;
+   }
 }
