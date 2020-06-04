@@ -58,6 +58,7 @@
                <label for="passwd">Password</label>
                <input type="password" name="passwd" id="passwd" required><br>
                <input type='submit' value='login' class='btn btn-primary'>
+               <a href="signup.php">signup</a>
             </form>
          </div>
       </div>
