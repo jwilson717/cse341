@@ -81,7 +81,7 @@
                <label for="pl_name" class='pat hide'>Patient Last Name</label>
                <input type="text" name="pl_name" id="pl_name" class='pat hide preq'><br class='pat hide'>
                <label for="dob" class='pat hide'>Date of Birth: </label>
-               <input type="text" name="dob" id="dob" class='pat hide preq'> <br class='pat hide'>
+               <input type="text" name="dob" id="dob" class='pat hide preq' placeholder='YYYY-M-DD'> <br class='pat hide'>
                <label for='insurance' class='pat hide'>Insurance: </label>
                <select name="insurance" id="insurance" class='pat hide'>
                   <option value='-1'>--SELECT--</option>
