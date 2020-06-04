@@ -5,7 +5,7 @@
    header('Location: login.php');
    die();
    }
-   echo $_POST['surgeryDate'];
+   echo 'Date: ' . htmlspecialchars($_POST['surgeryDate']);
    if(isset($_POST['surgeryDate'])) {
       $surgeryDate = htmlspecialchars($_POST['surgeryDate']);
    } 
