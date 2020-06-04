@@ -47,7 +47,7 @@
                <label for="age" class='surg hide'>Age: </label>
                <input type="text" name="age" id="age" class='surg hide req'><br class='surg hide'>
                <label for="sdate" class='surg hide'>Surgery Date: </label>
-               <input type="text" name="sdate" id="sdate" class='surg hide req'><br class='surg hide'>
+               <input type="text" name="sdate" id="sdate" class='surg hide req' placeholder='YYYY-M-DD'><br class='surg hide'>
                <label for="procedure" class='surg hide'>Procedure: </label>
                <input type="text" name="procedure" id="procedure" class='surg hide req'><br class='surg hide'>
                <label for="duration" class='surg hide'>Procedure Duration: </label>
