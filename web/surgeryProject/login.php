@@ -16,11 +16,12 @@
    if(isset($_POST['username']) && isset($_POST['passwd'])){
       $username = htmlspecialchars($_POST['username']);
       $passwd = htmlspecialchars($_POST['passwd']);
-      $statement = $db->prepare('SELECT * FROM system_user WHERE system_username = ? AND password = ?');
-      $statement->execute([$username, $passwd]);
+      $statement = $db->prepare('SELECT password FROM system_user WHERE system_username = ?');
+      $statement->execute([$username]);
       $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+      $hash = $results[0]['password'];
 
-      if(count($results) > 0) {
+      if (password_verify($passwd, $hash)) {
          $_SESSION['loggedin'] = True;
          if (isset($_SESSION['returnpage'])) {
             $returnpage = $_SESSION['returnpage'];
@@ -31,6 +32,18 @@
       } else {
          $error = 'Incorrect username or password.';
       }
+
+      // if(count($results) > 0) {
+      //    $_SESSION['loggedin'] = True;
+      //    if (isset($_SESSION['returnpage'])) {
+      //       $returnpage = $_SESSION['returnpage'];
+      //       header("Location: $returnpage");
+      //    } else {
+      //       header('Location: index.php');
+      //    }
+      // } else {
+      //    $error = 'Incorrect username or password.';
+      // }
    }
 ?>
 <!DOCTYPE html>
@@ -58,7 +71,6 @@
                <label for="passwd">Password</label>
                <input type="password" name="passwd" id="passwd" required><br>
                <input type='submit' value='login' class='btn btn-primary'>
-               <a href="signup.php">signup</a>
             </form>
          </div>
       </div>
