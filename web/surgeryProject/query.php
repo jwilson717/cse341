@@ -43,7 +43,7 @@
 
       $stmt->execute();
       $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
+      echo $surgeryDate;
       foreach ($rows as $row=>$r) {
          $id = $r['surgery_id'];
          echo "<a href='details.php?record=$id'><div class='border border-dark m-2 p-2 item'> <h2>" . $r['f_name'] . ' ' . $r['l_name'] . "</h2>";
