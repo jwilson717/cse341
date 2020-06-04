@@ -33,7 +33,7 @@
       //    $stmt->execute([$surgeryDate, $fname, $lname]);
       //    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-      $stmt = $db->prepare("SELECT * FROM surgery s JOIN patient p on s.patient_id = p.record_num WHERE s.surgery_date = $surgeryDate OR p.f_name = $fname OR p.lname = $lname");
+      $stmt = $db->prepare("SELECT * FROM surgery s JOIN patient p on s.patient_id = p.record_num WHERE s.surgery_date = '$surgeryDate' OR p.f_name = '$fname' OR p.lname = '$lname'");
       $stmt->execute();
       $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
          foreach ($rows as $row=>$r) {
