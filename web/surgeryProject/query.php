@@ -5,11 +5,11 @@
    header('Location: login.php');
    die();
    }
-   echo 'Date: ' . htmlspecialchars($_POST['surgeryDate']);
+   // echo 'Date: ' . htmlspecialchars($_POST['surgeryDate']);
    if(isset($_POST['surgeryDate'])) {
       $surgeryDate = htmlspecialchars($_POST['surgeryDate']);
    } 
-
+   echo 'Date: ' .$surgeryDate;
    if ($surgeryDate == '') {
       $surgeryDate = '0000-00-00';
    } 
