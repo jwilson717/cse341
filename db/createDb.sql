@@ -9,6 +9,7 @@ DROP TABLE surgery;
 DROP TABLE patient;
 DROP TABLE pathology;
 DROP TABLE insurance;
+DROP TABLE system_user;
 
 CREATE TABLE insurance (
    insurance_id SERIAL primary key
@@ -48,4 +49,13 @@ CREATE TABLE pathology_connect (
    , pathology_id int NOT NULL 
    , FOREIGN KEY (surgery_id) REFERENCES surgery (surgery_id)
    , FOREIGN KEY (pathology_id) REFERENCES pathology (pathology_id)
+);
+
+CREATE TABLE system_user (
+   system_user_id SERIAL PRIMARY KEY 
+   , system_username VARCHAR(45) NOT NULL 
+   , password VARCHAR(75) NOT NULL
+   , f_name VARCHAR(45)
+   , l_name VARCHAR(45)
+   , UNIQUE(system_username)
 );
