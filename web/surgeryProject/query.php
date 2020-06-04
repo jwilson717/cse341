@@ -36,9 +36,9 @@
       //    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
       
       if ($surgeryDate = '0000-00-00') {
-         $stmt = $db->prepare("SELECT * FROM surgery s JOIN patient p on s.patient_id = p.record_num WHERE p.f_name = '$fname' OR p.l_name = '$lname'");
+         $stmt = $db->prepare("SELECT * FROM surgery s JOIN patient p on s.patient_id = p.record_num WHERE p.f_name like '$fname' OR p.l_name like '$lname'");
       } else {
-         $stmt = $db->prepare("SELECT * FROM surgery s JOIN patient p on s.patient_id = p.record_num WHERE s.surgery_date = '$surgeryDate' OR p.f_name = '$fname' OR p.l_name = '$lname'");
+         $stmt = $db->prepare("SELECT * FROM surgery s JOIN patient p on s.patient_id = p.record_num WHERE s.surgery_date = '$surgeryDate' OR p.f_name like '$fname' OR p.l_name like '$lname'");
       }
 
       $stmt->execute();
