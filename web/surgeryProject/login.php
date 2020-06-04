@@ -32,18 +32,6 @@
       } else {
          $error = 'Incorrect username or password.';
       }
-
-      // if(count($results) > 0) {
-      //    $_SESSION['loggedin'] = True;
-      //    if (isset($_SESSION['returnpage'])) {
-      //       $returnpage = $_SESSION['returnpage'];
-      //       header("Location: $returnpage");
-      //    } else {
-      //       header('Location: index.php');
-      //    }
-      // } else {
-      //    $error = 'Incorrect username or password.';
-      // }
    }
 ?>
 <!DOCTYPE html>
