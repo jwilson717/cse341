@@ -34,15 +34,21 @@
       //    WHERE s.surgery_date = ?  AND p.f_name like ? AND p.l_name like ?');
       //    $stmt->execute([$surgeryDate, $fname, $lname]);
       //    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+      
+      if ($surgeryDate = '0000-00-00') {
+         $stmt = $db->prepare("SELECT * FROM surgery s JOIN patient p on s.patient_id = p.record_num WHERE p.f_name = '$fname' OR p.l_name = '$lname'");
+      } else {
+         $stmt = $db->prepare("SELECT * FROM surgery s JOIN patient p on s.patient_id = p.record_num WHERE s.surgery_date = '$surgeryDate' OR p.f_name = '$fname' OR p.l_name = '$lname'");
+      }
 
-      $stmt = $db->prepare("SELECT * FROM surgery s JOIN patient p on s.patient_id = p.record_num WHERE s.surgery_date = '$surgeryDate' OR p.f_name = '$fname' OR p.l_name = '$lname'");
       $stmt->execute();
       $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-         foreach ($rows as $row=>$r) {
-            $id = $r['surgery_id'];
-            echo "<a href='details.php?record=$id'><div class='border border-dark m-2 p-2 item'> <h2>" . $r['f_name'] . ' ' . $r['l_name'] . "</h2>";
-            echo "<p class='ml-3'>" . $r['surgery_date'] . " " . $r['procedure'] . "</p></div></a>";
-         }
+
+      foreach ($rows as $row=>$r) {
+         $id = $r['surgery_id'];
+         echo "<a href='details.php?record=$id'><div class='border border-dark m-2 p-2 item'> <h2>" . $r['f_name'] . ' ' . $r['l_name'] . "</h2>";
+          echo "<p class='ml-3'>" . $r['surgery_date'] . " " . $r['procedure'] . "</p></div></a>";
+      }
       // } 
 
       
