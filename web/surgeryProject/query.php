@@ -5,7 +5,7 @@
    header('Location: login.php');
    die();
    }
-   
+   echo $_POST['surgeryDate'];
    if(isset($_POST['surgeryDate'])) {
       if ($_POST['surgeryDate'] == '') {
          $surgeryDate = '0000-00-00';
