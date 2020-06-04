@@ -39,7 +39,7 @@
          <form action="data.php" method='post' id='surgeryData' class='row'>
             <div class='col-6'>
                <input type="checkbox" id='surgerycheck' name='surgerycheck' value='New Surgery'>
-               <label for="surgerycheck">New Surgery</label><br class='surg hide'>
+               <label for="surgerycheck" class='bld'>New Surgery</label><br class='surg hide'>
                <label for="f_name" class='surg hide'>Patient First Name: </label>
                <input type="text" name='f_name' id='f_name' class='surg hide req'><br class='surg hide'>
                <label for="l_name" class='surg hide'>Patient Last Name: </label>
@@ -73,7 +73,7 @@
             </div>
             <div class='col-6'>
                <input type="checkbox" id='patientcheck' name='patientcheck' value='New Patient'>     
-               <label for="patientcheck">New Patient</label><br class='pat hide'>
+               <label for="patientcheck" class='bld'>New Patient</label><br class='pat hide'>
                <label for="recordnum" class='pat hide'>Record Numer: </label>
                <input type="text" name="recordnum" id="recordnum" class='pat hide preq'><br class='pat hide'>
                <label for="pf_name" class='pat hide'>Patient First Name: </label>
