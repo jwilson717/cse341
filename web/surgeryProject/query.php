@@ -5,13 +5,13 @@
    header('Location: login.php');
    die();
    }
-   // echo 'Date: ' . htmlspecialchars($_POST['surgeryDate']);
+
    if(isset($_POST['surgeryDate'])) {
-      $surgeryDate = htmlspecialchars($_POST['surgeryDate']);
-   } 
-   echo 'Date: ' .$surgeryDate;
-   if ($surgeryDate == '') {
-      $surgeryDate = '0000-00-00';
+      if ($_POST['surgeryDate'] == '') {
+         $surgeryDate = '0000-00-00';
+      } else {
+         $surgeryDate = htmlspecialchars($_POST['surgeryDate']);
+      }
    } 
    
    if(isset($_POST['patientfname'])){
@@ -35,7 +35,7 @@
       //    $stmt->execute([$surgeryDate, $fname, $lname]);
       //    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
       
-      if ($surgeryDate = '0000-00-00') {
+      if ($surgeryDate == '0000-00-00') {
          $stmt = $db->prepare("SELECT * FROM surgery s JOIN patient p on s.patient_id = p.record_num WHERE p.f_name like '$fname' AND p.l_name like '$lname'");
       } else {
          $stmt = $db->prepare("SELECT * FROM surgery s JOIN patient p on s.patient_id = p.record_num WHERE s.surgery_date = '$surgeryDate' AND (p.f_name like '$fname' AND p.l_name like '$lname')");
@@ -43,7 +43,7 @@
 
       $stmt->execute();
       $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-      echo $surgeryDate;
+
       foreach ($rows as $row=>$r) {
          $id = $r['surgery_id'];
          echo "<a href='details.php?record=$id'><div class='border border-dark m-2 p-2 item'> <h2>" . $r['f_name'] . ' ' . $r['l_name'] . "</h2>";
