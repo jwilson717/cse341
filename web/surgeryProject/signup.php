@@ -82,12 +82,12 @@
             document.getElementById('match').classList.add('hide');
          }
 
-         if (!(passwd.length >= 7)) {
-            valid = false;
-            document.getElementById('seven').classList.remove('hide');
-         } else {
-            document.getElementById('seven').classList.add('hide');
-         }
+         // if (!(passwd.length >= 7)) {
+         //    valid = false;
+         //    document.getElementById('seven').classList.remove('hide');
+         // } else {
+         //    document.getElementById('seven').classList.add('hide');
+         // }
 
          return valid;
       }
