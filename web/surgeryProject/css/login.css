@@ -10,3 +10,9 @@ body {
 .h75 {
    height: 75vh;
 }
+
+@media screen and (max-width: 500px){
+   .col-6 {
+      min-width: 100%;
+   }
+}

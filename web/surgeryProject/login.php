@@ -9,48 +9,51 @@
          header('Location: index.php');
       }
    }
-   $db = null;
-   try
-      {
-        $dbUrl = getenv('DATABASE_URL');
+   // $db = null;
+   // try
+   //    {
+   //      $dbUrl = getenv('DATABASE_URL');
       
-        $dbOpts = parse_url($dbUrl);
+   //      $dbOpts = parse_url($dbUrl);
       
-        $dbHost = $dbOpts["host"];
-        $dbPort = $dbOpts["port"];
-        $dbUser = $dbOpts["user"];
-        $dbPassword = $dbOpts["pass"];
-        $dbName = ltrim($dbOpts["path"],'/');
+   //      $dbHost = $dbOpts["host"];
+   //      $dbPort = $dbOpts["port"];
+   //      $dbUser = $dbOpts["user"];
+   //      $dbPassword = $dbOpts["pass"];
+   //      $dbName = ltrim($dbOpts["path"],'/');
       
-        $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+   //      $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
       
-        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      }
-      catch (PDOException $ex)
-      {
-        echo 'Error!: ' . $ex->getMessage();
-        die();
-      }
+   //      $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+   //    }
+   //    catch (PDOException $ex)
+   //    {
+   //      echo 'Error!: ' . $ex->getMessage();
+   //      die();
+   //    }
 
-      if(isset($_POST['username']) && isset($_POST['passwd'])){
-         $username = htmlspecialchars($_POST['username']);
-         $passwd = htmlspecialchars($_POST['passwd']);
-         $statement = $db->prepare('SELECT * FROM system_user WHERE system_username = ? AND password = ?');
-         $statement->execute([$username, $passwd]);
-         $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+   require('dbconnect.php');
+   $db = getDb();
 
-         if(count($results) > 0) {
-            $_SESSION['loggedin'] = True;
-            if (isset($_SESSION['returnpage'])) {
-               $returnpage = $_SESSION['returnpage'];
-               header("Location: $returnpage");
-            } else {
-               header('Location: index.php');
-            }
+   if(isset($_POST['username']) && isset($_POST['passwd'])){
+      $username = htmlspecialchars($_POST['username']);
+      $passwd = htmlspecialchars($_POST['passwd']);
+      $statement = $db->prepare('SELECT * FROM system_user WHERE system_username = ? AND password = ?');
+      $statement->execute([$username, $passwd]);
+      $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+      if(count($results) > 0) {
+         $_SESSION['loggedin'] = True;
+         if (isset($_SESSION['returnpage'])) {
+            $returnpage = $_SESSION['returnpage'];
+            header("Location: $returnpage");
          } else {
-            $error = 'Incorrect username or password.';
+            header('Location: index.php');
          }
+      } else {
+         $error = 'Incorrect username or password.';
       }
+   }
 ?>
 <!DOCTYPE html>
 <html lang="en">
