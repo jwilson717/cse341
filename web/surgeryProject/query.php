@@ -7,10 +7,12 @@
    }
    
    if(isset($_POST['surgeryDate'])) {
-      $surgeryDate = htmlspecialchars($_POST['surgeryDate']);
-   } else {
-      $surgeryDate = '0000-00-00';
-   }
+      if ($_POST['surgeryDate'] == '') {
+         $surgeryDate = '0000-00-00';
+      } else {
+         $surgeryDate = htmlspecialchars($_POST['surgeryDate']);
+      }
+   } 
    
    if(isset($_POST['patientfname'])){
       $fname = '%' . htmlspecialchars($_POST['patientfname']) . '%';
