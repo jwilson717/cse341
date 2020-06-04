@@ -60,7 +60,7 @@
    <?php if(isset($error)) {echo "<h3>" . $error . "</h3>";}?>
    <span class='hide' id='seven'>Password must be at least 7 characters</span><br>
    <span class='hide' id='match'>Passwords do not match</span>
-   <form action="week07-signup.php" onsubmit='return validate()' method='post'>
+   <form action="signup.php" onsubmit='return validate()' method='post'>
       <label for="username">Username: </label>
       <input type="text" name='username' id='username' required><br>
       <label for="password">Password: </label>
